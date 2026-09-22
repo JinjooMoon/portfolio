@@ -13,6 +13,8 @@ const image = (
 export const localCouncilsSA: ProjectPageConfig = {
   slug: "local-councils-sa",
   title: "Local Councils SA",
+  description: "Extending a new brand identity into a digital experience.",
+  contribution: "Wireframes and visual design",
   tags: ["Visual Excellence"],
   status: "Live",
   year: "2024",
@@ -204,6 +206,7 @@ export const localCouncilsSA: ProjectPageConfig = {
       href: "/agriculture-victoria",
       image: "/images/agriculture-victoria-thumbnail.png",
       alt: "Agriculture Victoria website design",
+      description: "Making complex agricultural information easier to navigate.",
       tags: ["Design thinking", "Clarity through design"],
     },
     {
@@ -211,6 +214,7 @@ export const localCouncilsSA: ProjectPageConfig = {
       href: "/business-victoria",
       image: "/images/business-victoria-thumbnail.png",
       alt: "Business Victoria website design",
+      description: "Refreshing the experience while improving content discovery.",
       tags: ["Co-design", "Solving complex problems"],
     },
     {
@@ -218,6 +222,7 @@ export const localCouncilsSA: ProjectPageConfig = {
       href: "/penrith-city-council",
       image: "/images/penrith-city-council-thumbnail.png",
       alt: "Penrith City Council website design",
+      description: "Building a connected digital ecosystem across five sites.",
       tags: ["Design ecosystem", "Leading Collaboration"],
     },
   ],

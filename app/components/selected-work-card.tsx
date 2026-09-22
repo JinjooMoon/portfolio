@@ -7,6 +7,7 @@ export type SelectedWorkCardProject = {
   alt: string;
   tags: string[];
   href: string;
+  description?: string;
 };
 
 export function Pill({ children, dark = false }: { children: React.ReactNode; dark?: boolean }) {
@@ -21,9 +22,15 @@ export function SelectedWorkCard({ project }: { project: SelectedWorkCardProject
       </div>
       <div className="project-details">
         <h3>{project.title}</h3>
+        {project.description && (
+          <p className="selected-work-card__description">
+            {project.description}
+          </p>
+        )}
         <div className="tag-list">
           {project.tags.map((tag) => <Pill key={tag}>{tag}</Pill>)}
         </div>
+        
       </div>
     </Link>
   );

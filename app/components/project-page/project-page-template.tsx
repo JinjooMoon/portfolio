@@ -21,11 +21,15 @@ function ProjectHeroContent({ project }: { project: ProjectPageConfig }) {
   return (
     <div className="project-hero__copy">
       <h1>{project.title}</h1>
-      <div className="project-hero__tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
       <div className="project-hero__meta">
-        <span><strong>Status</strong>{project.status}</span>
-        <span><strong>Year</strong>{project.year}</span>
+        <div><p>Status</p>{project.status}</div>
+        <div><p>Year</p>{project.year}</div>
+        {project.contribution ? (
+          <div className="project-hero__contribution">
+            <p>Contribution</p>{project.contribution}</div>
+        ) : null}
       </div>
+      <div className="project-hero__tags">{project.tags.map((tag) => <div key={tag}>{tag}</div>)}</div>
       {project.liveUrl ? (
         <a className="project-hero__live-link" href={project.liveUrl} target="_blank" rel="noreferrer">
           Click to view the live site <ExternalLinkArrow />

@@ -10,6 +10,7 @@ const projects = [
     href: "/penrith-city-council",
     image: "/images/penrith-city-council-thumbnail.png",
     alt: "Penrith City Council website design",
+    description: "Building a connected digital ecosystem across five sites.",
     tags: ["Design ecosystem", "Leading Collaboration"],
   },
   {
@@ -17,6 +18,7 @@ const projects = [
     href: "/agriculture-victoria",
     image: "/images/agriculture-victoria-thumbnail.png",
     alt: "Agriculture Victoria website design",
+    description: "Making complex agricultural information easier to navigate.",
     tags: ["Design thinking", "Clarity through design"],
   },
   {
@@ -24,6 +26,7 @@ const projects = [
     href: "/business-victoria",
     image: "/images/business-victoria-thumbnail.png",
     alt: "Business Victoria website design",
+    description: "Refreshing the experience while improving content discovery.",
     tags: ["Visual refresh", "Solving complex problems"],
   },
   {
@@ -31,6 +34,7 @@ const projects = [
     href: "/outdoor-recreation-victoria",
     image: "/images/outdoor-recreation-victoria-thumbnail.png",
     alt: "Outdoor Recreation Victoria website design",
+    description: "Creating a scalable design system for a growing digital ecosystem.",
     tags: ["Design under constraints"],
   },
   {
@@ -38,6 +42,7 @@ const projects = [
     href: "/local-councils-sa",
     image: "/images/local-councils-sa-thumbnail.png",
     alt: "Local Councils SA website design",
+    description: "Extending a new brand identity into a digital experience.",
     tags: ["Visual Excellence"],
   },
 ];
@@ -56,11 +61,11 @@ function OutlineButton({
   className?: string;
 }) {
   return (
-    <a className={`outline-button ${className}`} href={href}>
+    <div><a className={`outline-button ${className}`} href={href}>
       {!iconAfter && icon ? <Image src={icon} alt="" width={24} height={24} /> : null}
       <span>{children}</span>
       {iconAfter && icon ? <Image src={icon} alt="" width={24} height={24} /> : null}
-    </a>
+    </a></div>
   );
 }
 

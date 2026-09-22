@@ -53,6 +53,8 @@ export type ProjectSection = {
 export type ProjectPageConfig = {
   slug: string;
   title: string;
+  description?: string;
+  contribution?: string;
   tags: string[];
   status: string;
   year: string;
@@ -66,6 +68,7 @@ export type ProjectPageConfig = {
       title: string;
       image: string;
       alt: string;
+      description?: string;
       tags: string[];
       href: string;
   }>;
