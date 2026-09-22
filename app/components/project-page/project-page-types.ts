@@ -62,5 +62,11 @@ export type ProjectPageConfig = {
   tocItems?: Array<{ label: string; targetId: string }>;
   sections: ProjectSection[];
   outcome?: { title: string; paragraphs: string[]; linkLabel?: string; linkUrl?: string };
-  relatedProjects: Array<{ title: string; image: string; alt: string; tags: string[] }>;
+  relatedProjects: Array<{
+      title: string;
+      image: string;
+      alt: string;
+      tags: string[];
+      href: string;
+  }>;
 };
