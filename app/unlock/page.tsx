@@ -78,11 +78,11 @@ export default function UnlockPage() {
           <div className="lock-help-card">
             <p><strong>Need access or having issues?</strong> Reach out via LinkedIn or Email and I&apos;ll help you shortly.</p>
             <div className="lock-social-links">
-              <a className="lock-social-button" href="https://www.linkedin.com/in/jinjoopearlmoon/">
+              <a className="lock-social-button" href="https://www.linkedin.com/in/jinjoopearlmoon/" target="_blank" rel="noopener noreferrer">
                 <Image src="/images/linkedin-icon.svg" alt="" width={24} height={24} />
                 <span>Linkedin</span>
               </a>
-              <a className="lock-social-button" href="mailto:jinjoo.pearl.moon@gmail.com">
+              <a className="lock-social-button" href="mailto:jinjoo.pearl.moon@gmail.com" target="_blank" rel="noopener noreferrer">
                 <Image src="/images/email-icon.svg" alt="" width={24} height={24} />
                 <span>Email</span>
               </a>

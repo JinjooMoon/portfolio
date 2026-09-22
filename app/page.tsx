@@ -53,19 +53,23 @@ function OutlineButton({
   icon,
   iconAfter = false,
   className = "",
+  targetBlank = false,
 }: {
   children: React.ReactNode;
   href: string;
   icon?: string;
   iconAfter?: boolean;
   className?: string;
+  targetBlank?: boolean;
 }) {
   return (
-    <div><a className={`outline-button ${className}`} href={href}>
-      {!iconAfter && icon ? <Image src={icon} alt="" width={24} height={24} /> : null}
-      <span>{children}</span>
-      {iconAfter && icon ? <Image src={icon} alt="" width={24} height={24} /> : null}
-    </a></div>
+    <div>
+      <a className={`outline-button ${className}`} href={href} target={targetBlank ? "_blank" : undefined} rel={targetBlank ? "noopener noreferrer" : undefined}>
+        {!iconAfter && icon ? <Image src={icon} alt="" width={24} height={24} /> : null}
+        <span>{children}</span>
+        {iconAfter && icon ? <Image src={icon} alt="" width={24} height={24} /> : null}
+      </a>
+    </div>
   );
 }
 
@@ -101,8 +105,8 @@ function Footer() {
               <p>I’d love to hear from you.</p>
             </div>
             <div className="social-links">
-              <OutlineButton href="https://www.linkedin.com/in/jinjoopearlmoon/" icon="/images/linkedin-icon.svg">Linkedin</OutlineButton>
-              <OutlineButton href="mailto:jinjoo.pearl.moon@gmail.com" icon="/images/email-icon.svg">Email</OutlineButton>
+              <OutlineButton href="https://www.linkedin.com/in/jinjoopearlmoon/" icon="/images/linkedin-icon.svg" targetBlank>Linkedin</OutlineButton>
+              <OutlineButton href="mailto:jinjoo.pearl.moon@gmail.com" icon="/images/email-icon.svg" targetBlank>Email</OutlineButton>
             </div>
           </section>
           </div>
