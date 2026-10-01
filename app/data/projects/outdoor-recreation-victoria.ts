@@ -1,5 +1,6 @@
 import type { ProjectImageItem } from "../../components/project-image-row";
 import type { ProjectPageConfig } from "../../components/project-page/project-page-types";
+import { galleryItem } from "./gallery-item";
 
 const asset = (name: string) => `/images/outdoor-recreation-victoria/${name}`;
 const image = (name: string, width: number, height: number, alt: string, caption?: string, widthPercent?: number): ProjectImageItem => ({ src: asset(name), width, height, alt, caption, widthPercent });
@@ -53,6 +54,7 @@ export const outdoorRecreationVictoria: ProjectPageConfig = {
       id: "key-design-decisions",
       title: "Key design decisions",
       displayTitle: "Component library",
+      tocTitle: "Component library",
       content: [{ heading: "Creating a lightweight shared foundation", paragraphs: [
         "Alongside the designs, I created a lightweight component library to document the key components, styles and usage guidance.",
         "It provided a shared reference for the client and development team and helped maintain consistency as the designs moved into build.",
@@ -79,19 +81,29 @@ export const outdoorRecreationVictoria: ProjectPageConfig = {
       id: "outcome",
       title: "Outcome",
       content: [
-        { heading: "On-Time Delivery", paragraphs: ["Completed full homepage, listing, search, and landing page designs within the 2 week deadline."] },
-        { heading: "Developer Handoff", paragraphs: ["Provided a lightweight UI component library and usage guidelines, ensuring 100% design fidelity during engineering build."] },
-        { heading: "Stakeholder Alignment", paragraphs: ["Achieved rapid, multi-agency sign-off with zero major design revisions required."] },
+        { heading: "01 / On-Time Delivery", paragraphs: ["Completed full homepage, listing, search, and landing page designs within the 2 week deadline."] },
+        { heading: "02 / Developer Handoff", paragraphs: ["Provided a lightweight UI component library and usage guidelines, ensuring 100% design fidelity during engineering build."] },
+        { heading: "03 / Stakeholder Alignment", paragraphs: ["Achieved rapid, multi-agency sign-off with zero major design revisions required."] },
       ],
     },
   ],
+  gallery: [
+    galleryItem(image("brand-introduction.png", 1343, 604, "Outdoor Recreation Victoria new brand introduction"), "Outdoor Recreation Victoria new brand introduction", "Introducing the new brand helped stakeholders become familiar with the visual language before seeing it applied to the website."),
+    galleryItem(image("design-development.png", 1125, 291, "Outdoor Recreation Victoria design development"), "Outdoor Recreation Victoria design development", "Outdoor Recreation Victoria designs"),
+    galleryItem(image("component-buttons.png", 2718, 1978, "Outdoor Recreation Victoria button component library example"), "Component library - Buttons example"),
+    galleryItem(image("component-cta.png", 4096, 3587, "Outdoor Recreation Victoria call to action component library example"), "Component library - Call to action example"),
+    galleryItem(image("homepage.png", 1764, 4096, "Outdoor Recreation Victoria homepage"), "Homepage"),
+    galleryItem(image("landing-hunting.png", 1450, 4096, "Outdoor Recreation Victoria landing page"), "Landing page"),
+    galleryItem(image("listing-news.png", 1920, 3293, "Outdoor Recreation Victoria listing page"), "Listing page"),
+    galleryItem(image("search.png", 1590, 4096, "Outdoor Recreation Victoria search page"), "Search page"),
+  ],
   relatedProjects: [
-    { title: "Agriculture Victoria",
-      href: "/agriculture-victoria", 
-      image: "/images/agriculture-victoria-thumbnail.png", 
-      alt: "Agriculture Victoria website design", 
-      description: "Making complex agricultural information easier to navigate.",
-      tags: ["Design thinking", "Clarity through design"] },
+    { title: "Local Councils SA",
+      href: "/local-councils-sa",
+      image: "/images/local-councils-sa-thumbnail.png",
+      alt: "Local Councils SA website design",
+      description: "Extending a new brand identity into a digital experience.",
+      tags: ["Visual Excellence"] },
     { title: "Business Victoria",
       href: "/business-victoria", 
       image: "/images/business-victoria-thumbnail.png", 

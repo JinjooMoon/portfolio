@@ -1,5 +1,6 @@
 import type { ProjectImageItem } from "../../components/project-image-row";
 import type { ProjectPageConfig } from "../../components/project-page/project-page-types";
+import { galleryItem } from "./gallery-item";
 
 const asset = (name: string) => `/images/business-victoria/${name}`;
 const image = (name: string, width: number, height: number, alt: string, caption?: string, widthPercent?: number): ProjectImageItem => ({ src: asset(name), width, height, alt, caption, widthPercent });
@@ -43,10 +44,7 @@ export const businessVictoria: ProjectPageConfig = {
     {
       id: "ux-deep-dive",
       title: "UX deep dive - Learning & Advice",
-      content: [
-        { heading: "Understanding the users - supporting time-poor small business owners", paragraphs: ["As part of the discovery process, I participated in discovery sessions and user journey workshops, supporting the team and contributing to the discussions. The workshops helped us understand that many of the users are small business owners who are time-poor and need to find useful information quickly. The user journeys also highlighted a number of dead ends and unclear pathways, particularly when users were trying to explore courses, events and other learning opportunities. A key insight was that users need to understand the practical commitment upfront before deciding whether something is relevant to them."] },
-        { heading: "How might we help time-poor business owners quickly understand whether an opportunity is relevant and worth their time?", paragraphs: [] },
-      ],
+      content: [{ heading: "Understanding the users - supporting time-poor small business owners", paragraphs: ["As part of the discovery process, I participated in discovery sessions and user journey workshops, supporting the team and contributing to the discussions. The workshops helped us understand that many of the users are small business owners who are time-poor and need to find useful information quickly. The user journeys also highlighted a number of dead ends and unclear pathways, particularly when users were trying to explore courses, events and other learning opportunities. A key insight was that users need to understand the practical commitment upfront before deciding whether something is relevant to them."] }],
     },
     {
       id: "from-insights-to-wireframes",
@@ -82,11 +80,23 @@ export const businessVictoria: ProjectPageConfig = {
       id: "outcome",
       title: "Outcome",
       content: [
-        { heading: "Streamlined Decision-Making", paragraphs: ["Key metadata (duration, cost, completion requirements) is now surfaced upfront, enabling business owners to evaluate opportunities at a glance."] },
-        { heading: "Cohesive Brand Experience", paragraphs: ["Established a modern, highly accessible UI framework deployed across both landing and content templates."] },
-        { heading: "Project Status", paragraphs: ["Successfully signed off across government stakeholders; currently in build for a planned early 2027 launch."] },
+        { heading: "01 / Streamlined Decision-Making", paragraphs: ["Key metadata (duration, cost, completion requirements) is now surfaced upfront, enabling business owners to evaluate opportunities at a glance."] },
+        { heading: "02 / Cohesive Brand Experience", paragraphs: ["Established a modern, highly accessible UI framework deployed across both landing and content templates."] },
+        { heading: "03 / Project Status", paragraphs: ["Successfully signed off across government stakeholders; currently in build for a planned early 2027 launch."] },
       ],
     },
+  ],
+  gallery: [
+    galleryItem(image("discovery-workshop.png", 1519, 374, "Discovery workshop board"), "Discovery workshop", "Discovery workshop: Identifying users and pain points"),
+    galleryItem(image("user-journey-mapping.png", 1036, 793, "User journey mapping board"), "User journey mapping"),
+    galleryItem(image("wireframes.png", 1139, 373, "Business Victoria wireframes"), "Business Victoria wireframes"),
+    galleryItem(image("homepage-after.png", 971, 4096, "Business Victoria refreshed homepage"), "Homepage After", "A refreshed visual direction creates a stronger and more engaging entry point into the Business Victoria experience."),
+    galleryItem(image("learning-advice-banner.png", 1007, 4096, "Learning and Advice landing page"), "Learning & Advice landing page", "A clearer entry point helps users understand the different learning and advice options available and find the right pathway."),
+    galleryItem(image("learning-advice-listing.png", 1440, 3392, "Learning and Advice listing page"), "Learning & Advice listing page", "A more scannable listing makes it easier for time-poor users to compare opportunities and identify what is relevant to them."),
+    galleryItem(image("learning-advice-content.png", 1440, 3897, "Learning and Advice content page"), "Learning & Advice content page", "Key information such as date, duration, cost and completion requirements is surfaced clearly, helping users quickly understand what to expect before committing."),
+    galleryItem(image("colour-combination-1.png", 1440, 500, "Business Victoria accessible colour combination exploration"), "Accessible colour combinations"),
+    galleryItem(image("immersive-imagery.png", 1440, 958, "Business Victoria immersive imagery example"), "Larger, more immersive imagery"),
+    galleryItem(image("content-hierarchy.png", 1440, 722, "Business Victoria clearer content hierarchy example"), "Clearer content hierarchy"),
   ],
   relatedProjects: [
     { title: "Penrith City Council",
@@ -101,11 +111,11 @@ export const businessVictoria: ProjectPageConfig = {
       alt: "Agriculture Victoria website design", 
       description: "Making complex agricultural information easier to navigate.",
       tags: ["Design thinking", "Clarity through design"] },
-    { title: "Outdoor Recreation Victoria",
-      href: "/outdoor-recreation-victoria", 
-      image: "/images/outdoor-recreation-victoria-thumbnail.png", 
-      alt: "Outdoor Recreation Victoria website design", 
-      description: "Creating a scalable design system for a growing digital ecosystem.",
-      tags: ["Design under constraints"] },
+    { title: "Local Councils SA",
+      href: "/local-councils-sa",
+      image: "/images/local-councils-sa-thumbnail.png",
+      alt: "Local Councils SA website design",
+      description: "Extending a new brand identity into a digital experience.",
+      tags: ["Visual Excellence"] },
   ],
 };

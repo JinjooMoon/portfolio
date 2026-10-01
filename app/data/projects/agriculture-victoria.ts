@@ -1,5 +1,6 @@
 import type { ProjectImageItem } from "../../components/project-image-row";
 import type { ProjectPageConfig } from "../../components/project-page/project-page-types";
+import { galleryItem } from "./gallery-item";
 
 const asset = (name: string) => `/images/agriculture-victoria/${name}`;
 const image = (name: string, width: number, height: number, alt: string, caption?: string, widthPercent?: number): ProjectImageItem => ({ src: asset(name), width, height, alt, caption, widthPercent });
@@ -36,7 +37,7 @@ export const agricultureVictoria: ProjectPageConfig = {
           image("opportunity-banner-workforce.png", 264, 82, "Workforce and harvest level two banner", "Level 2 page banner (Workforce and harvest): No key links or supporting content within the banner."),
         ] },
         { variation: "single", images: [image("opportunity-prioritise.png", 842, 507, "Agriculture Victoria content hierarchy example", "Multiple content types compete for attention, making it harder for users to identify the most relevant starting point.")] },
-        { variation: "single", images: [image("opportunity-deep-content.png", 840, 95, "Agriculture Victoria deep content structure example", "Finding the right information often requires navigating through multiple levels of content.")] },
+        { variation: "single", className: "agvic-deep-content", images: [image("opportunity-deep-content.png", 840, 95, "Agriculture Victoria deep content structure example", "Finding the right information often requires navigating through multiple levels of content.")] },
       ],
     },
     {
@@ -103,6 +104,18 @@ export const agricultureVictoria: ProjectPageConfig = {
     "The design direction was very well received by the client and successfully progressed through multiple rounds of government review and approval. Despite the complexity of the approval process, we were able to build strong stakeholder alignment and establish a clear direction for the next phase of the project.",
     "The project is currently in development, with the new experience expected to launch in early 2027.",
   ] },
+  gallery: [
+    galleryItem(image("template-section-page.png", 1440, 3143, "Agriculture Victoria level one landing page"), "Level 1 landing page"),
+    galleryItem(image("template-topic-page.png", 1440, 2137, "Agriculture Victoria level two landing page"), "Level 2 landing page"),
+    galleryItem(image("template-subtopic-page.png", 1440, 1779, "Agriculture Victoria level three landing page"), "Level 3 landing page"),
+    galleryItem(image("template-branded-page.png", 1440, 3143, "Agriculture Victoria branded landing page"), "Branded level 1 landing page"),
+    galleryItem(image("decision-level-1.png", 1440, 692, "Level one Agriculture Victoria page design"), "Level one Agriculture Victoria page design", "Level 1 page using a wide-format image as the visual anchor."),
+    galleryItem(image("decision-level-2.png", 1440, 578, "Level two Agriculture Victoria page design"), "Level two Agriculture Victoria page design", "Level 2 page carrying through the background imagery from its Level 1 parent page."),
+    galleryItem(image("decision-level-3.png", 1440, 578, "Level three Agriculture Victoria page design"), "Level three Agriculture Victoria page design", "Level 3 page carrying through the background imagery from its Level 1 parent page."),
+    galleryItem(image("decision-hero-banner.png", 1440, 700, "Agriculture Victoria hero banner design"), "Hero banner", "Subtle use of the signature shape"),
+    galleryItem(image("decision-footer.png", 1440, 455, "Agriculture Victoria footer design"), "Footer", "Subtle use of the signature shape"),
+    galleryItem(image("after-homepage.png", 1402, 4096, "Proposed Agriculture Victoria homepage"), "Proposed Agriculture Victoria homepage", "Subtle use of the signature shapes allows the content to take priority, while larger imagery creates a clear focal point for each section and helps users quickly scan and prioritise information."),
+  ],
   relatedProjects: [
     { title: "Penrith City Council",
       href: "/penrith-city-council", 
@@ -116,11 +129,11 @@ export const agricultureVictoria: ProjectPageConfig = {
       alt: "Business Victoria website design", 
       description: "Refreshing the experience while improving content discovery.",
       tags: ["Co-design", "Solving complex problems"] },
-    { title: "Outdoor Recreation Victoria",
-      href: "/outdoor-recreation-victoria", 
-      image: "/images/outdoor-recreation-victoria-thumbnail.png", 
-      alt: "Outdoor Recreation Victoria website design", 
-      description: "Creating a scalable design system for a growing digital ecosystem.",
-      tags: ["Design under constraints"] },
+    { title: "Local Councils SA",
+      href: "/local-councils-sa",
+      image: "/images/local-councils-sa-thumbnail.png",
+      alt: "Local Councils SA website design",
+      description: "Extending a new brand identity into a digital experience.",
+      tags: ["Visual Excellence"] },
   ],
 };

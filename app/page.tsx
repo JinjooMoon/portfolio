@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { BackToTop } from "./components/back-to-top";
+import { ExternalLinkIcon } from "./components/external-link-arrow";
 import { SiteHeader } from "./components/site-header";
 import { Pill, SelectedWorkCard } from "./components/selected-work-card";
 
@@ -87,7 +89,7 @@ function Footer() {
             </div>
             <div className="about-meta">
               <p><strong>Based in </strong>Melbourne, Australia</p>
-              <p><strong>Currently at </strong><a href="https://www.squiz.net/" target="_blank" rel="noreferrer">Squiz</a></p>
+              <p><strong>Currently at </strong><a href="https://www.squiz.net/" target="_blank" rel="noreferrer">Squiz <ExternalLinkIcon /></a></p>
               <div className="skills-row">
                 <strong>I bring</strong>
                 <div className="tag-list">
@@ -115,10 +117,10 @@ function Footer() {
       <div className="content-container">
         <div className="footer-bottom">
           <div className="footer-identity">
-            <strong>Jin Moon</strong>
+            <strong>Jinjoo Moon</strong>
             <span>© 2026</span>
           </div>
-          <OutlineButton href="#top" icon="/images/back-to-top-arrow.svg" iconAfter className="back-to-top">Back to top</OutlineButton>
+          <BackToTop variant="home" targetId="top" />
           <p>Thanks for stopping by!</p>
         </div>
       </div>
@@ -135,7 +137,7 @@ export default function HomePage() {
         <div className="content-container hero-content">
           <div className="hero-copy">
             <h1 id="hero-heading">Product designer<br />with a strong UI design background</h1>
-            <p>I bring together product thinking, UX and UI craft to create clear, thoughtful digital experiences.</p>
+            <p>I bring together product thinking, UX, and UI craft to create clear, thoughtful, and accessible digital experiences for government and higher education.</p>
           </div>
           <OutlineButton href="#about-contact" icon="/images/hero-cta-arrow.svg" iconAfter>Learn more about me</OutlineButton>
         </div>

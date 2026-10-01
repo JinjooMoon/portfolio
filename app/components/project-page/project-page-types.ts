@@ -2,6 +2,7 @@ import type { ProjectImageItem } from "../project-image-row";
 
 export type ProjectTextBlock = {
   heading?: string;
+  headingLevel?: "h3" | "h4";
   subheading?: string;
   paragraphs: string[];
 };
@@ -10,12 +11,18 @@ export type ProjectImageRowConfig = {
   variation: import("../project-image-row").ProjectImageRowVariation;
   images: ProjectImageItem[];
   className?: string;
+  heading?: string;
 };
 
 export type ProjectComparison = {
   before: ProjectImageItem;
   after: ProjectImageItem;
   layout?: "equal" | "weighted";
+};
+
+export type ProjectGalleryItem = ProjectImageItem & {
+  title: string;
+  description?: string;
 };
 
 export type ProjectProcessGroup = {
@@ -64,6 +71,7 @@ export type ProjectPageConfig = {
   tocItems?: Array<{ label: string; targetId: string }>;
   sections: ProjectSection[];
   outcome?: { title: string; paragraphs: string[]; linkLabel?: string; linkUrl?: string };
+  gallery?: ProjectGalleryItem[];
   relatedProjects: Array<{
       title: string;
       image: string;

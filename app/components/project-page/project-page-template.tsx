@@ -2,20 +2,15 @@ import Image from "next/image";
 import { Fragment } from "react";
 import { SiteHeader } from "../site-header";
 import { SelectedWorkCard } from "../selected-work-card";
-import { BackToTop } from "./back-to-top";
+import { BackToTop } from "../back-to-top";
+import { ExternalLinkArrow, ExternalLinkIcon } from "../external-link-arrow";
 import { ProjectComparison } from "./project-comparison";
+import { InsightCallout } from "./insight-callout";
+import { ProjectGallery } from "./project-gallery";
 import { ProjectImageRow } from "../project-image-row";
 import type { ProjectPageConfig, ProjectSection, ProjectTextBlock } from "./project-page-types";
 
 const projectSectionIds = ["project-top"];
-
-function ExternalLinkArrow() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 function ProjectHeroContent({ project }: { project: ProjectPageConfig }) {
   return (
@@ -30,11 +25,29 @@ function ProjectHeroContent({ project }: { project: ProjectPageConfig }) {
         ) : null}
       </div>
       <div className="project-hero__tags">{project.tags.map((tag) => <div key={tag}>{tag}</div>)}</div>
-      {project.liveUrl ? (
-        <a className="project-hero__live-link" href={project.liveUrl} target="_blank" rel="noreferrer">
-          Click to view the live site <ExternalLinkArrow />
-        </a>
-      ) : null}
+      {project.liveUrl && project.gallery?.length ? (
+        <div className="project-hero__links project-hero__links--stack-mobile">
+          <a className="project-hero__live-link project-hero__live-link--external" href={project.liveUrl} target="_blank" rel="noreferrer">
+            Click to view the live site <ExternalLinkIcon className="project-hero__external-icon" />
+          </a>
+          <a className="project-hero__live-link project-hero__live-link--gallery" href="#project-gallery">
+            View project gallery <Image src="/images/back-to-top-arrow.svg" alt="" width={24} height={24} />
+          </a>
+        </div>
+      ) : (
+        <>
+          {project.liveUrl ? (
+            <a className="project-hero__live-link project-hero__live-link--external" href={project.liveUrl} target="_blank" rel="noreferrer">
+              Click to view the live site <ExternalLinkIcon className="project-hero__external-icon" />
+            </a>
+          ) : null}
+          {project.gallery?.length ? (
+            <a className="project-hero__live-link project-hero__live-link--gallery" href="#project-gallery">
+              View project gallery <Image src="/images/back-to-top-arrow.svg" alt="" width={24} height={24} />
+            </a>
+          ) : null}
+        </>
+      )}
     </div>
   );
 }
@@ -121,11 +134,21 @@ function SectionDivider() {
 function RenderTextBlocks({ blocks = [] }: { blocks?: ProjectTextBlock[] }) {
   return blocks.map((block, index) => (
     <div className="project-copy-block" key={`${block.heading ?? block.subheading ?? "block"}-${index}`}>
-      {block.heading ? <h3>{block.heading}</h3> : null}
+      {block.heading ? block.headingLevel === "h4" ? <h4>{block.heading}</h4> : <h3>{block.heading}</h3> : null}
       {block.subheading ? <h3>{block.subheading}</h3> : null}
       {block.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
     </div>
   ));
+}
+
+function BusinessVictoriaUxDeepDive({ section }: { section: ProjectSection }) {
+  return (
+    <section id={section.id} className="project-content-section business-ux-deep-dive">
+      <h2>{section.title}</h2>
+      <RenderTextBlocks blocks={section.content} />
+      <InsightCallout>How might we help time-poor business owners quickly understand whether an opportunity is relevant and worth their time?</InsightCallout>
+    </section>
+  );
 }
 
 function BusinessVictoriaVisualRefresh({ section }: { section: ProjectSection }) {
@@ -223,6 +246,7 @@ function OutdoorRecreationVictoriaApproach({ section }: { section: ProjectSectio
 function RenderSection({ section, projectSlug }: { section: ProjectSection; projectSlug: string }) {
   if (projectSlug === "local-councils-sa" && section.id === "creating-dynamic-experience") return <LocalCouncilsSADynamicExperience section={section} />;
   if (projectSlug === "outdoor-recreation-victoria" && section.id === "the-approach") return <OutdoorRecreationVictoriaApproach section={section} />;
+  if (projectSlug === "business-victoria" && section.id === "ux-deep-dive") return <BusinessVictoriaUxDeepDive section={section} />;
   if (projectSlug === "business-victoria" && section.id === "visual-refresh") return <BusinessVictoriaVisualRefresh section={section} />;
   if (projectSlug === "business-victoria" && section.id === "final-designs") return <BusinessVictoriaFinalDesigns section={section} />;
 
@@ -230,13 +254,13 @@ function RenderSection({ section, projectSlug }: { section: ProjectSection; proj
 
   if (hasDecisionGrid) {
     return (
-      <section id={section.id} className="project-content-section project-decision-section">
+      <section id={section.id} className={`project-content-section project-decision-section ${projectSlug === "penrith-city-council" ? "penrith-key-design-decisions" : ""}`.trim()}>
         <h2>{section.displayTitle ?? section.title}</h2>
         <RenderTextBlocks blocks={section.intro} />
         <div className="project-decisions">
           {section.content?.map((block, index) => (
             <article className="project-decision" key={`${block.heading ?? block.subheading ?? "decision"}-${index}`}>
-              {block.heading ? <h3>{block.heading}</h3> : null}
+              {block.heading ? block.headingLevel === "h4" ? <h4>{block.heading}</h4> : <h3>{block.heading}</h3> : null}
               {block.subheading ? <h3>{block.subheading}</h3> : null}
               {block.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               {section.comparisons?.[index] ? <ProjectComparison {...section.comparisons[index]} layout="weighted" /> : null}
@@ -252,21 +276,30 @@ function RenderSection({ section, projectSlug }: { section: ProjectSection; proj
       <h2>{section.displayTitle ?? section.title}</h2>
       <RenderTextBlocks blocks={section.intro} />
       <RenderTextBlocks blocks={section.content} />
-      {section.processGroups?.map((group) => (
-        <div className={`project-process-group ${group.className ?? ""}`.trim()} key={group.label}>
-          <h3>{group.label}</h3>
-          <div className="project-process-steps">
-            {group.steps.map((step, index) => (
-              <Fragment key={step}>
-                <span>{step}</span>
-                {index < group.steps.length - 1 ? <b aria-hidden="true">→</b> : null}
-              </Fragment>
-            ))}
-          </div>
-          {group.imageRows?.map((row, index) => <ProjectImageRow key={`${group.label}-row-${index}`} {...row} />)}
+      {section.processGroups?.length ? (
+        <div className="project-process-groups">
+          {section.processGroups.map((group) => (
+            <div className={`project-process-group ${group.className ?? ""}`.trim()} key={group.label}>
+              <h3>{group.label}</h3>
+              <div className="project-process-steps">
+                {group.steps.map((step, index) => (
+                  <Fragment key={step}>
+                    <span>{step}</span>
+                    {index < group.steps.length - 1 ? <b aria-hidden="true">→</b> : null}
+                  </Fragment>
+                ))}
+              </div>
+              {group.imageRows?.map((row, index) => <ProjectImageRow key={`${group.label}-row-${index}`} {...row} />)}
+            </div>
+          ))}
         </div>
-      ))}
-      {section.imageRows?.map((row, index) => <ProjectImageRow key={`${section.id}-row-${index}`} {...row} />)}
+      ) : null}
+      {section.imageRows?.map((row, index) => row.heading ? (
+        <div className="project-image-group" key={`${section.id}-row-${index}`}>
+          <h3>{row.heading}</h3>
+          <ProjectImageRow {...row} />
+        </div>
+      ) : <ProjectImageRow key={`${section.id}-row-${index}`} {...row} />)}
       {section.comparisons?.map((comparison, index) => <ProjectComparison key={`${section.id}-comparison-${index}`} {...comparison} />)}
       {section.subsections?.map((subsection) => <RenderSection key={subsection.id} section={subsection} projectSlug={projectSlug} />)}
     </section>
@@ -285,6 +318,7 @@ export function ProjectPageTemplate({ project }: { project: ProjectPageConfig })
             ? project.tocItems.map((item) => <a key={`${item.label}-${item.targetId}`} href={`#${item.targetId}`}>{item.label}</a>)
             : project.sections.map((section) => <a key={section.id} href={`#${section.id}`}>{section.tocTitle ?? section.title}</a>)}
           {!project.tocItems && project.outcome ? <a href="#outcome">Outcome</a> : null}
+          {project.gallery?.length ? <a href="#project-gallery">Project gallery</a> : null}
         </nav>
       </div>
       {project.sections.map((section) => (
@@ -304,12 +338,14 @@ export function ProjectPageTemplate({ project }: { project: ProjectPageConfig })
           </section>
         </>
       ) : null}
+      {project.gallery?.length ? <><SectionDivider /><ProjectGallery items={project.gallery} /></> : null}
       <section className="project-related-section">
-        <h2>Would you like to see more of my selected work?</h2>
-        <div className="project-related-grid">{project.relatedProjects.map((related) => <SelectedWorkCard key={related.title} project={related} />)}</div>
+        <div className="project-shell">
+          <h2>Would you like to see more of my selected work?</h2>
+          <div className="project-related-grid">{project.relatedProjects.map((related) => <SelectedWorkCard key={related.title} project={related} variant="project-related" />)}</div>
+        </div>
       </section>
-      <BackToTop />
-      <footer className="project-footer"><div className="project-shell project-footer__inner"><div><strong>Jin Moon</strong><span>© 2026</span></div><p>Thanks for stopping by!</p></div></footer>
+      <footer className="project-footer"><div className="project-shell project-footer__inner"><div><strong>Jin Moon</strong><span>© 2026</span></div><p>Thanks for stopping by!</p><BackToTop variant="project" targetId="project-top" /></div></footer>
     </main>
   );
 }
