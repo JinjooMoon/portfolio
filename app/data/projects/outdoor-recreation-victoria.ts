@@ -1,6 +1,5 @@
 import type { ProjectImageItem } from "../../components/project-image-row";
 import type { ProjectPageConfig } from "../../components/project-page/project-page-types";
-import { galleryItem } from "./gallery-item";
 
 const asset = (name: string) => `/images/outdoor-recreation-victoria/${name}`;
 const image = (name: string, width: number, height: number, alt: string, caption?: string, widthPercent?: number): ProjectImageItem => ({ src: asset(name), width, height, alt, caption, widthPercent });
@@ -48,7 +47,7 @@ export const outdoorRecreationVictoria: ProjectPageConfig = {
         "As the brand continued to evolve during the project, elements such as colour and graphic motifs changed along the way. I structured the Figma components and styles to make these changes easier to apply consistently across the designs, allowing the experience to adapt without significant rework.",
       ] }],
       processGroups: [{ label: "The process:", className: "orv-process-group", steps: ["Agreed direction", "Design development", "Brand evolution", "Update designs"] }],
-      imageRows: [{ variation: "single", images: [image("design-development.png", 1125, 291, "Outdoor Recreation Victoria design development", "Outdoor Recreation Victoria designs")] }],
+      imageRows: [{ variation: "single", images: [image("gallery/orv-gallery-04.webp", 1125, 291, "Outdoor Recreation Victoria design development", "Outdoor Recreation Victoria designs")] }],
     },
     {
       id: "key-design-decisions",
@@ -60,8 +59,8 @@ export const outdoorRecreationVictoria: ProjectPageConfig = {
         "It provided a shared reference for the client and development team and helped maintain consistency as the designs moved into build.",
       ] }],
       imageRows: [{ variation: "two-equal", images: [
-        image("component-buttons.png", 2718, 1978, "Outdoor Recreation Victoria button component library example", "Component library - Buttons example"),
-        image("component-cta.png", 4096, 3587, "Outdoor Recreation Victoria call to action component library example", "Component library - Call to action example"),
+        image("gallery/orv-gallery-19.webp", 2718, 1978, "Outdoor Recreation Victoria button component library example", "Component library - Buttons example"),
+        image("gallery/orv-gallery-18.webp", 4096, 3587, "Outdoor Recreation Victoria call to action component library example", "Component library - Call to action example"),
       ] }],
     },
     {
@@ -69,10 +68,10 @@ export const outdoorRecreationVictoria: ProjectPageConfig = {
       title: "The final experience",
       content: [{ heading: "Bringing the new experience together", paragraphs: ["The final designs brought together the new visual identity, shared design foundations and requirements across the different agencies into one cohesive digital experience."] }],
       imageRows: [
-        { variation: "single", images: [image("homepage.png", 1764, 4096, "Outdoor Recreation Victoria homepage", "Homepage")] },
+        { variation: "single", images: [image("gallery/orv-gallery-05.webp", 1764, 4096, "Outdoor Recreation Victoria homepage", "Homepage")] },
         { variation: "three", images: [
           image("landing-hunting.png", 1450, 4096, "Outdoor Recreation Victoria landing page", "Landing page"),
-          image("listing-news.png", 1920, 3293, "Outdoor Recreation Victoria listing page", "Listing page"),
+          image("gallery/orv-gallery-14.webp", 1920, 3293, "Outdoor Recreation Victoria listing page", "Listing page"),
           image("search.png", 1590, 4096, "Outdoor Recreation Victoria search page", "Search page"),
         ] },
       ],
@@ -86,16 +85,6 @@ export const outdoorRecreationVictoria: ProjectPageConfig = {
         { heading: "03 / Stakeholder Alignment", paragraphs: ["Achieved rapid, multi-agency sign-off with zero major design revisions required."] },
       ],
     },
-  ],
-  gallery: [
-    galleryItem(image("brand-introduction.png", 1343, 604, "Outdoor Recreation Victoria new brand introduction"), "Outdoor Recreation Victoria new brand introduction", "Introducing the new brand helped stakeholders become familiar with the visual language before seeing it applied to the website."),
-    galleryItem(image("design-development.png", 1125, 291, "Outdoor Recreation Victoria design development"), "Outdoor Recreation Victoria design development", "Outdoor Recreation Victoria designs"),
-    galleryItem(image("component-buttons.png", 2718, 1978, "Outdoor Recreation Victoria button component library example"), "Component library - Buttons example"),
-    galleryItem(image("component-cta.png", 4096, 3587, "Outdoor Recreation Victoria call to action component library example"), "Component library - Call to action example"),
-    galleryItem(image("homepage.png", 1764, 4096, "Outdoor Recreation Victoria homepage"), "Homepage"),
-    galleryItem(image("landing-hunting.png", 1450, 4096, "Outdoor Recreation Victoria landing page"), "Landing page"),
-    galleryItem(image("listing-news.png", 1920, 3293, "Outdoor Recreation Victoria listing page"), "Listing page"),
-    galleryItem(image("search.png", 1590, 4096, "Outdoor Recreation Victoria search page"), "Search page"),
   ],
   relatedProjects: [
     { title: "Local Councils SA",

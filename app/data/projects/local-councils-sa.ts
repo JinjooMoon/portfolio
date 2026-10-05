@@ -1,6 +1,5 @@
 import type { ProjectImageItem } from "../../components/project-image-row";
 import type { ProjectPageConfig } from "../../components/project-page/project-page-types";
-import { galleryItem } from "./gallery-item";
 
 const asset = (name: string) => `/images/local-councils-sa/${name}`;
 const image = (
@@ -173,7 +172,7 @@ export const localCouncilsSA: ProjectPageConfig = {
           variation: "single",
           images: [
             image(
-              "final-experience-homepage.png",
+              "gallery/sa-councils-gallery-03.webp",
               1260,
               4556,
               "Local Councils SA final homepage",
@@ -184,7 +183,7 @@ export const localCouncilsSA: ProjectPageConfig = {
           variation: "three",
           images: [
             image("final-experience-search.png", 380, 291, "Local Councils SA search experience", "Search"),
-            image("final-experience-megamenu.png", 380, 238, "Local Councils SA mega menu", "How councils work"),
+            image("gallery/sa-councils-gallery-05.webp", 380, 238, "Local Councils SA mega menu", "How councils work"),
             image("final-experience-landing-page.png", 380, 351, "Local Councils SA landing page", "Careers in council"),
           ],
         },
@@ -200,20 +199,6 @@ export const localCouncilsSA: ProjectPageConfig = {
     linkLabel: "Click to view the live site",
     linkUrl: "https://www.localcouncils.sa.gov.au/",
   },
-  gallery: [
-    galleryItem(image("the-opportunity.png", 1680, 108, "Local Councils SA brand guidelines"), "Local Councils SA brand guidelines", "Brand guideline was print focused with minimal key brand elements in it."),
-    galleryItem(image("design-process-wireframes.png", 1680, 1130, "Local Councils SA wireframes"), "Wireframes"),
-    galleryItem(image("design-process-designs.png", 1680, 1235, "Local Councils SA design exploration"), "Local Councils SA design exploration", "Wireframes"),
-    galleryItem(image("creating-experience-colour-01.png", 1680, 686, "Local Councils SA colour exploration"), "Heading treatment", "Colour with purpose"),
-    galleryItem(image("creating-experience-layout-01.png", 528, 211, "Local Councils SA section layout A"), "Section Layout A"),
-    galleryItem(image("creating-experience-layout-02.png", 528, 249, "Local Councils SA section layout B"), "Section Layout B"),
-    galleryItem(image("creating-experience-layout-03.png", 528, 249, "Local Councils SA section layout C"), "Section Layout C"),
-    galleryItem(image("creating-experience-visual-details-01.png", 816, 333, "Local Councils SA CTA with image on the left"), "CTA with image on the left", "CTA with image on the left creating an energetic entry point"),
-    galleryItem(image("creating-experience-visual-details-02.png", 816, 333, "Local Councils SA CTA with image on the right"), "CTA with image on the right", "CTA with image on the right creating an energetic entry point"),
-    galleryItem(image("final-experience-homepage.png", 1260, 4556, "Local Councils SA final homepage"), "Local Councils SA final homepage"),
-    galleryItem(image("final-experience-search.png", 380, 291, "Local Councils SA search experience"), "Search"),
-    galleryItem(image("final-experience-megamenu.png", 380, 238, "Local Councils SA mega menu"), "How councils work"),
-  ],
   relatedProjects: [
     {
       title: "Agriculture Victoria",

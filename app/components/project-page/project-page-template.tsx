@@ -8,6 +8,7 @@ import { ProjectComparison } from "./project-comparison";
 import { InsightCallout } from "./insight-callout";
 import { ProjectGallery } from "./project-gallery";
 import { ProjectImageRow } from "../project-image-row";
+import { getProjectGallery } from "../../data/projects/get-project-gallery";
 import type { ProjectPageConfig, ProjectSection, ProjectTextBlock } from "./project-page-types";
 
 const projectSectionIds = ["project-top"];
@@ -230,11 +231,11 @@ function OutdoorRecreationVictoriaApproach({ section }: { section: ProjectSectio
       <RenderTextBlocks blocks={section.content} />
       <div className="orv-approach-grid">
         <figure>
-          <div className="orv-approach-crop"><Image src="/images/outdoor-recreation-victoria/existing-experience-review.png" alt="Existing outdoor recreation website review" width={844} height={790} /></div>
+          <div className="orv-approach-crop"><Image src="/images/outdoor-recreation-victoria/gallery/orv-gallery-01.png" alt="Existing outdoor recreation website review" width={844} height={790} /></div>
           <figcaption>Reviewing the existing experiences helped surface what stakeholders valued and what could be improved or left behind.</figcaption>
         </figure>
         <figure>
-          <div className="orv-approach-crop"><Image src="/images/outdoor-recreation-victoria/reference-examples.png" alt="Outdoor recreation reference examples" width={833} height={460} /></div>
+          <div className="orv-approach-crop"><Image src="/images/outdoor-recreation-victoria/gallery/orv-gallery-02.png" alt="Outdoor recreation reference examples" width={833} height={460} /></div>
           <figcaption>Examples from other organisations helped provide a shared reference point for discussing different approaches to content, navigation and visual design.</figcaption>
         </figure>
       </div>
@@ -306,7 +307,9 @@ function RenderSection({ section, projectSlug }: { section: ProjectSection; proj
   );
 }
 
-export function ProjectPageTemplate({ project }: { project: ProjectPageConfig }) {
+export async function ProjectPageTemplate({ project: projectConfig }: { project: ProjectPageConfig }) {
+  const project = { ...projectConfig, gallery: await getProjectGallery(projectConfig.slug) };
+
   return (
     <main id="project-top" className="project-page">
       <SiteHeader sectionIds={projectSectionIds} variant="project" />

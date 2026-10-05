@@ -1,0 +1,66 @@
+{
+	"bv-gallery-01.png": {
+		"title": "01 / Discovery workshop",
+		"description": "Mapping content, audiences and key needs to identify opportunities for a clearer and more useful Business Victoria experience."
+	},
+	"bv-gallery-02.png": {
+		"title": "02 / User journey map",
+		"description": "Mapping the current journey to identify friction points and opportunities to improve how business owners find and move through information."
+	},
+	"bv-gallery-03.png": {
+		"title": "03 / Wireframes",
+		"description": "Exploring page structures and content hierarchy through wireframes before moving into the visual direction."
+	},
+	"bv-gallery-04.png": {
+		"title": "04 / Homepage / Desktop",
+		"description": "A refreshed homepage brings key pathways, content and imagery together, creating a clearer and more engaging entry point for business owners."
+	},
+	"bv-gallery-05.png": {
+		"title": "05 / Homepage / Mobile",
+		"description": "The homepage hierarchy adapted for mobile, keeping key pathways and content easy to scan and navigate."
+	},
+	"bv-gallery-06.png": {
+		"title": "06 / Mega menu / Desktop",
+		"description": "A clearer mega menu groups key services and information into a more structured navigation system, making deeper content easier to discover."
+	},
+	"bv-gallery-07.png": {
+		"title": "07 / Mega menu / Mobile",
+		"description": "A simplified mobile navigation keeps the same content structure while making key pathways easier to access on smaller screens."
+	},
+	"bv-gallery-08.png": {
+		"title": "08 / Search / Desktop",
+		"description": "A focused search experience helps users quickly find relevant information without losing context from the page."
+	},
+	"bv-gallery-09.png": {
+		"title": "09 / Search / Mobile",
+		"description": "The search experience adapted for mobile, prioritising quick access to results and suggestions within a compact layout."
+	},
+	"bv-gallery-10.png": {
+		"title": "10 / Learning & advice / Desktop",
+		"description": "A refreshed Learning & advice experience brings multiple learning pathways into a clearer and more engaging content structure, supporting discovery across workshops, courses and related resources."
+	},
+	"bv-gallery-11.png": {
+		"title": "11 / Learning & advice / Mobile",
+		"description": "The Learning & advice experience translated to mobile, preserving the content hierarchy while reducing visual complexity and keeping key pathways easy to explore."
+	},
+	"bv-gallery-12.png": {
+		"title": "12 / Learning opportunities / Listing",
+		"description": "A dedicated Learning opportunities listing brings search, filters and result cards together to help users find relevant workshops, courses and webinars."
+	},
+	"bv-gallery-13.png": {
+		"title": "13 / Learning opportunities / Search & filters",
+		"description": "A search-led interface combines keywords and multiple filters to help users quickly narrow down relevant learning opportunities."
+	},
+	"bv-gallery-14.png": {
+		"title": "14 / Learning opportunities / Date filter",
+		"description": "A focused date-filter experience gives users a clearer way to refine learning opportunities by when they are available."
+	},
+	"bv-gallery-15.png": {
+		"title": "15 / Content page / Desktop",
+		"description": "A flexible content page brings together long-form information, supporting components and clear hierarchy within the broader Business Victoria page system."
+	},
+	"bv-gallery-16.png": {
+		"title": "16 / Content page / Mobile",
+		"description": "The content experience adapted for smaller screens, maintaining readability and hierarchy across deeper, long-form content."
+	}
+}

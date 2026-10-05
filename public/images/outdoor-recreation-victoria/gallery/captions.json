@@ -1,0 +1,78 @@
+{
+	"orv-gallery-01.png": {
+		"title": "01 / Existing experience review",
+		"description": "Reviewing the existing experience across key pages to identify inconsistencies, content patterns and opportunities for improvement."
+	},
+	"orv-gallery-02.png": {
+		"title": "02 / Reference examples",
+		"description": "Exploring reference sites and interaction patterns to establish a clearer direction for the new Outdoor Recreation Victoria experience."
+	},
+	"orv-gallery-03.png": {
+		"title": "03 / Brand introduction",
+		"description": "Translating the refreshed brand direction into a digital language that could work consistently across the broader experience."
+	},
+	"orv-gallery-04.png": {
+		"title": "04 / Design development",
+		"description": "Developing the visual direction across page layouts, components and responsive states to create a more cohesive experience."
+	},
+	"orv-gallery-05.png": {
+		"title": "05 / Homepage / Desktop",
+		"description": "A redesigned homepage brings key actions, outdoor recreation pathways and priority content together through a clearer visual hierarchy."
+	},
+	"orv-gallery-06.png": {
+		"title": "06 / Homepage / Quick actions",
+		"description": "Expanding the homepage interaction model to make high-priority tasks easier to access while keeping the broader content experience engaging."
+	},
+	"orv-gallery-07.png": {
+		"title": "07 / Homepage / Mobile",
+		"description": "The homepage adapted for mobile, preserving the key pathways and content hierarchy within a more compact experience."
+	},
+	"orv-gallery-08.png": {
+		"title": "08 / Mega menu / Desktop",
+		"description": "A structured mega menu brings deeper content and key pathways into a clearer navigation system, helping users understand where to go next."
+	},
+	"orv-gallery-09.png": {
+		"title": "09 / Mega menu / Mobile",
+		"description": "A simplified mobile navigation keeps the same information structure while making deeper content easier to access on smaller screens."
+	},
+	"orv-gallery-10.png": {
+		"title": "10 / Search / Desktop",
+		"description": "A search experience designed to surface relevant results and suggestions quickly while keeping users connected to the wider site experience."
+	},
+	"orv-gallery-11.png": {
+		"title": "11 / Search / Mobile",
+		"description": "The search experience adapted for mobile, keeping suggestions and results accessible within a focused interface."
+	},
+	"orv-gallery-12.png": {
+		"title": "12 / Fishing page / Desktop",
+		"description": "A section-level experience brings fishing information, pathways and supporting content together within the broader Outdoor Recreation Victoria page system."
+	},
+	"orv-gallery-13.png": {
+		"title": "13 / Fishing page / Mobile",
+		"description": "The fishing experience translated to mobile, maintaining the content hierarchy while making deeper information easier to navigate."
+	},
+	"orv-gallery-14.png": {
+		"title": "14 / News listing / Desktop",
+		"description": "A news listing brings articles and supporting metadata into a structured layout that makes current information easier to browse."
+	},
+	"orv-gallery-15.png": {
+		"title": "15 / News listing / Mobile",
+		"description": "The news experience adapted for mobile, maintaining a clear article hierarchy while making longer lists easier to scan."
+	},
+	"orv-gallery-16.png": {
+		"title": "16 / Content page / Desktop",
+		"description": "A flexible content template brings together headings, navigation, downloads, media, accordions and other components within a consistent page structure."
+	},
+	"orv-gallery-17.png": {
+		"title": "17 / Content page / Mobile",
+		"description": "The content template adapted for mobile, preserving the hierarchy and accessibility of long-form information and supporting components."
+	},
+	"orv-gallery-18.png": {
+		"title": "18 / Call-to-action component",
+		"description": "A flexible call-to-action component provides a consistent way to guide users towards key actions across different page contexts."
+	},
+	"orv-gallery-19.png": {
+		"title": "19 / Button component",
+		"description": "A considered button system establishes clear hierarchy across primary, secondary and contextual actions while supporting consistent interaction states."
+	}
+}

@@ -1,0 +1,38 @@
+{
+	"sa-councils-gallery-01.png": {
+		"title": "01 / Wireframes",
+		"description": "Working through the core page structures and content hierarchy to establish the foundations for the new Local Councils SA experience."
+	},
+	"sa-councils-gallery-02.png": {
+		"title": "02 / Visual exploration",
+		"description": "Exploring how the new brand identity could translate into a more dynamic and engaging digital experience."
+	},
+	"sa-councils-gallery-03.png": {
+		"title": "03 / Homepage / Desktop",
+		"description": "A more dynamic homepage brings key pathways, content and the new visual identity together while giving the experience greater rhythm and personality."
+	},
+	"sa-councils-gallery-04.png": {
+		"title": "04 / Homepage / Mobile",
+		"description": "The homepage visual direction adapted for mobile, maintaining the brand expression and content hierarchy across smaller screens."
+	},
+	"sa-councils-gallery-05.png": {
+		"title": "05 / Mega menu",
+		"description": "A structured mega menu extends the visual language into navigation while helping users move between key areas of the site."
+	},
+	"sa-councils-gallery-06.png": {
+		"title": "06 / Landing page",
+		"description": "A flexible landing page combines varied layouts, colour and graphic details to create a more engaging way to explore related content."
+	},
+	"sa-councils-gallery-07.png": {
+		"title": "07 / Search / Desktop",
+		"description": "A focused search experience makes it easier to browse and find relevant council information within the broader site structure."
+	},
+	"sa-councils-gallery-08.png": {
+		"title": "08 / Search / Mobile",
+		"description": "The search experience adapted for mobile, keeping results and key actions accessible within a compact layout."
+	},
+	"sa-councils-gallery-09.png": {
+		"title": "09 / Content page",
+		"description": "A flexible content experience brings together long-form information, supporting components and the new visual language within a consistent page structure."
+	}
+}

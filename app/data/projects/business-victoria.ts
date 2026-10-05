@@ -1,6 +1,5 @@
 import type { ProjectImageItem } from "../../components/project-image-row";
 import type { ProjectPageConfig } from "../../components/project-page/project-page-types";
-import { galleryItem } from "./gallery-item";
 
 const asset = (name: string) => `/images/business-victoria/${name}`;
 const image = (name: string, width: number, height: number, alt: string, caption?: string, widthPercent?: number): ProjectImageItem => ({ src: asset(name), width, height, alt, caption, widthPercent });
@@ -57,7 +56,7 @@ export const businessVictoria: ProjectPageConfig = {
       processGroups: [{ label: "The process:", steps: ["Identify users and pain points", "User journey mapping", "Wireframe exploration"] }],
       imageRows: [
         { variation: "single", images: [image("discovery-workshop.png", 1519, 374, "Discovery workshop board", "Discovery workshop: Identifying users and pain points")] },
-        { variation: "single", images: [image("user-journey-mapping.png", 1036, 793, "User journey mapping board", "User journey mapping")] },
+        { variation: "single", images: [image("gallery/bv-gallery-02.webp", 1036, 793, "User journey mapping board", "User journey mapping")] },
         { variation: "single", images: [image("wireframes.png", 1139, 373, "Business Victoria wireframes", "Wireframes")] },
       ],
     },
@@ -67,13 +66,13 @@ export const businessVictoria: ProjectPageConfig = {
       intro: [{ paragraphs: ["The final designs brought together the refreshed visual direction and the UX improvements explored for Learning & Advice."] }],
       comparisons: [{
         before: image("homepage-before.png", 1920, 3679, "Business Victoria homepage before", "Homepage Before"),
-        after: image("homepage-after.png", 971, 4096, "Business Victoria refreshed homepage", "Homepage After: A refreshed visual direction creates a stronger and more engaging entry point into the Business Victoria experience."),
+        after: image("gallery/bv-gallery-04.webp", 971, 4096, "Business Victoria refreshed homepage", "Homepage After: A refreshed visual direction creates a stronger and more engaging entry point into the Business Victoria experience."),
         layout: "weighted",
       }],
       imageRows: [{ variation: "three", className: "business-learning-row", images: [
-        image("learning-advice-banner.png", 1007, 4096, "Learning and Advice landing page", "Learning & Advice landing page: A clearer entry point helps users understand the different learning and advice options available and find the right pathway."),
-        image("learning-advice-listing.png", 1440, 3392, "Learning and Advice listing page", "Learning & Advice listing page: A more scannable listing makes it easier for time-poor users to compare opportunities and identify what is relevant to them."),
-        image("learning-advice-content.png", 1440, 3897, "Learning and Advice content page", "Learning & Advice content page: Key information such as date, duration, cost and completion requirements is surfaced clearly, helping users quickly understand what to expect before committing."),
+        image("gallery/bv-gallery-10.webp", 1007, 4096, "Learning and Advice landing page", "Learning & Advice landing page: A clearer entry point helps users understand the different learning and advice options available and find the right pathway."),
+        image("gallery/bv-gallery-12.webp", 1440, 3392, "Learning and Advice listing page", "Learning & Advice listing page: A more scannable listing makes it easier for time-poor users to compare opportunities and identify what is relevant to them."),
+        image("gallery/bv-gallery-15.webp", 1440, 3897, "Learning and Advice content page", "Learning & Advice content page: Key information such as date, duration, cost and completion requirements is surfaced clearly, helping users quickly understand what to expect before committing."),
       ] }],
     },
     {
@@ -85,18 +84,6 @@ export const businessVictoria: ProjectPageConfig = {
         { heading: "03 / Project Status", paragraphs: ["Successfully signed off across government stakeholders; currently in build for a planned early 2027 launch."] },
       ],
     },
-  ],
-  gallery: [
-    galleryItem(image("discovery-workshop.png", 1519, 374, "Discovery workshop board"), "Discovery workshop", "Discovery workshop: Identifying users and pain points"),
-    galleryItem(image("user-journey-mapping.png", 1036, 793, "User journey mapping board"), "User journey mapping"),
-    galleryItem(image("wireframes.png", 1139, 373, "Business Victoria wireframes"), "Business Victoria wireframes"),
-    galleryItem(image("homepage-after.png", 971, 4096, "Business Victoria refreshed homepage"), "Homepage After", "A refreshed visual direction creates a stronger and more engaging entry point into the Business Victoria experience."),
-    galleryItem(image("learning-advice-banner.png", 1007, 4096, "Learning and Advice landing page"), "Learning & Advice landing page", "A clearer entry point helps users understand the different learning and advice options available and find the right pathway."),
-    galleryItem(image("learning-advice-listing.png", 1440, 3392, "Learning and Advice listing page"), "Learning & Advice listing page", "A more scannable listing makes it easier for time-poor users to compare opportunities and identify what is relevant to them."),
-    galleryItem(image("learning-advice-content.png", 1440, 3897, "Learning and Advice content page"), "Learning & Advice content page", "Key information such as date, duration, cost and completion requirements is surfaced clearly, helping users quickly understand what to expect before committing."),
-    galleryItem(image("colour-combination-1.png", 1440, 500, "Business Victoria accessible colour combination exploration"), "Accessible colour combinations"),
-    galleryItem(image("immersive-imagery.png", 1440, 958, "Business Victoria immersive imagery example"), "Larger, more immersive imagery"),
-    galleryItem(image("content-hierarchy.png", 1440, 722, "Business Victoria clearer content hierarchy example"), "Clearer content hierarchy"),
   ],
   relatedProjects: [
     { title: "Penrith City Council",

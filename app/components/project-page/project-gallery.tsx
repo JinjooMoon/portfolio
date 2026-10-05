@@ -135,7 +135,7 @@ export function ProjectGallery({ items }: { items: ProjectGalleryItem[] }) {
           >
             <div className="project-shell project-gallery-viewer__image-stage">
               <Image
-                className="project-gallery-viewer__image"
+                className={`project-gallery-viewer__image${current.width <= 768 && current.height > current.width ? " project-gallery-viewer__image--mobile-ui" : ""}`}
                 src={current.src}
                 alt={current.alt}
                 width={current.width}

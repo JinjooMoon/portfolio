@@ -1,6 +1,5 @@
 import type { ProjectImageItem } from "../../components/project-image-row";
 import type { ProjectPageConfig } from "../../components/project-page/project-page-types";
-import { galleryItem } from "./gallery-item";
 
 const asset = (name: string) => `/images/agriculture-victoria/${name}`;
 const image = (name: string, width: number, height: number, alt: string, caption?: string, widthPercent?: number): ProjectImageItem => ({ src: asset(name), width, height, alt, caption, widthPercent });
@@ -79,9 +78,9 @@ export const agricultureVictoria: ProjectPageConfig = {
       ] }],
       imageRows: [{ variation: "four", className: "agvic-template-row", images: [
         image("template-section-page.png", 1440, 3143, "Agriculture Victoria level one landing page", "Level 1 landing page"),
-        image("template-topic-page.png", 1440, 2137, "Agriculture Victoria level two landing page", "Level 2 landing page"),
-        image("template-subtopic-page.png", 1440, 1779, "Agriculture Victoria level three landing page", "Level 3 landing page"),
-        image("template-branded-page.png", 1440, 3143, "Agriculture Victoria branded landing page", "Branded level 1 landing page"),
+        image("gallery/agriculture-gallery-06.webp", 1440, 2137, "Agriculture Victoria level two landing page", "Level 2 landing page"),
+        image("gallery/agriculture-gallery-08.webp", 1440, 1779, "Agriculture Victoria level three landing page", "Level 3 landing page"),
+        image("gallery/agriculture-gallery-10.webp", 1440, 3143, "Agriculture Victoria branded landing page", "Branded level 1 landing page"),
       ] }],
     },
     {
@@ -94,7 +93,7 @@ export const agricultureVictoria: ProjectPageConfig = {
           image("responsive-mobile-menu.png", 375, 850, "Agriculture Victoria mobile menu", undefined, 19.8),
         ] },
         { variation: "two-device", images: [
-          image("responsive-events.png", 1390, 4096, "Agriculture Victoria events desktop page", "Images were removed on mobile to prevent them from pushing key content further down the page, while maintaining a consistent visual language across breakpoints.", 77.4),
+          image("gallery/agriculture-gallery-12.webp", 1390, 4096, "Agriculture Victoria events desktop page", "Images were removed on mobile to prevent them from pushing key content further down the page, while maintaining a consistent visual language across breakpoints.", 77.4),
           image("responsive-events-mobile.png", 375, 900, "Agriculture Victoria mobile events filters", undefined, 19.8),
         ] },
       ],
@@ -104,18 +103,6 @@ export const agricultureVictoria: ProjectPageConfig = {
     "The design direction was very well received by the client and successfully progressed through multiple rounds of government review and approval. Despite the complexity of the approval process, we were able to build strong stakeholder alignment and establish a clear direction for the next phase of the project.",
     "The project is currently in development, with the new experience expected to launch in early 2027.",
   ] },
-  gallery: [
-    galleryItem(image("template-section-page.png", 1440, 3143, "Agriculture Victoria level one landing page"), "Level 1 landing page"),
-    galleryItem(image("template-topic-page.png", 1440, 2137, "Agriculture Victoria level two landing page"), "Level 2 landing page"),
-    galleryItem(image("template-subtopic-page.png", 1440, 1779, "Agriculture Victoria level three landing page"), "Level 3 landing page"),
-    galleryItem(image("template-branded-page.png", 1440, 3143, "Agriculture Victoria branded landing page"), "Branded level 1 landing page"),
-    galleryItem(image("decision-level-1.png", 1440, 692, "Level one Agriculture Victoria page design"), "Level one Agriculture Victoria page design", "Level 1 page using a wide-format image as the visual anchor."),
-    galleryItem(image("decision-level-2.png", 1440, 578, "Level two Agriculture Victoria page design"), "Level two Agriculture Victoria page design", "Level 2 page carrying through the background imagery from its Level 1 parent page."),
-    galleryItem(image("decision-level-3.png", 1440, 578, "Level three Agriculture Victoria page design"), "Level three Agriculture Victoria page design", "Level 3 page carrying through the background imagery from its Level 1 parent page."),
-    galleryItem(image("decision-hero-banner.png", 1440, 700, "Agriculture Victoria hero banner design"), "Hero banner", "Subtle use of the signature shape"),
-    galleryItem(image("decision-footer.png", 1440, 455, "Agriculture Victoria footer design"), "Footer", "Subtle use of the signature shape"),
-    galleryItem(image("after-homepage.png", 1402, 4096, "Proposed Agriculture Victoria homepage"), "Proposed Agriculture Victoria homepage", "Subtle use of the signature shapes allows the content to take priority, while larger imagery creates a clear focal point for each section and helps users quickly scan and prioritise information."),
-  ],
   relatedProjects: [
     { title: "Penrith City Council",
       href: "/penrith-city-council", 

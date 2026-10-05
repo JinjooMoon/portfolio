@@ -1,0 +1,66 @@
+{
+	"agriculture-gallery-01.png": {
+		"title": "01 / Page and template exploration",
+		"description": "Exploring a range of page templates and content patterns to establish a more consistent experience across the existing information architecture."
+	},
+	"agriculture-gallery-02.png": {
+		"title": "02 / Homepage / Desktop",
+		"description": "A more editorial homepage brings priority content, key pathways and imagery together, creating a stronger visual entry point into the Agriculture Victoria experience."
+	},
+	"agriculture-gallery-03.png": {
+		"title": "03 / Homepage / Mobile",
+		"description": "Adapting the homepage hierarchy for smaller screens while keeping key pathways and content easy to scan and navigate."
+	},
+	"agriculture-gallery-04.png": {
+		"title": "04 / Section page / Desktop — Crops and horticulture",
+		"description": "A Level 2 page structure that introduces the section clearly while bringing key links and supporting content closer to the page introduction."
+	},
+	"agriculture-gallery-05.png": {
+		"title": "05 / Section page / Mobile — Crops and horticulture",
+		"description": "The section experience adapted for mobile, maintaining the page hierarchy while making navigation through deeper content easier to follow."
+	},
+	"agriculture-gallery-06.png": {
+		"title": "06 / Topic page / Desktop — Fruit and nuts",
+		"description": "A Level 2 topic experience that carries visual cues from its parent section while creating a clear starting point for exploring related content."
+	},
+	"agriculture-gallery-07.png": {
+		"title": "07 / Topic page / Mobile — Fruit and nuts",
+		"description": "The topic experience translated to mobile, keeping the relationship between the section, content and navigation clear at a smaller scale."
+	},
+	"agriculture-gallery-08.png": {
+		"title": "08 / Sub-topic page / Desktop — Fruit",
+		"description": "A Level 3 page that continues the visual language of its parent pages while organising deeper content into a more focused experience."
+	},
+	"agriculture-gallery-09.png": {
+		"title": "09 / Sub-topic page / Mobile — Fruit",
+		"description": "A streamlined mobile experience for deeper content, helping users move through the information hierarchy without losing their sense of place."
+	},
+	"agriculture-gallery-10.png": {
+		"title": "10 / Branded landing page / Desktop — Animal Welfare Victoria",
+		"description": "Extending the shared Agriculture Victoria page system into a distinct branded experience while maintaining consistency across the broader digital ecosystem."
+	},
+	"agriculture-gallery-11.png": {
+		"title": "11 / Branded landing page / Mobile — Animal Welfare Victoria",
+		"description": "Translating the branded experience to mobile while preserving its distinct visual character and the underlying page structure."
+	},
+	"agriculture-gallery-12.png": {
+		"title": "12 / Search results / Desktop — Events",
+		"description": "A search-led events experience that brings results and filtering together to help users find relevant information within a deeper content structure."
+	},
+	"agriculture-gallery-13.png": {
+		"title": "13 / Search results / Mobile — Events",
+		"description": "A responsive events experience that keeps search results and key filtering actions accessible while reducing the complexity of the desktop layout."
+	},
+	"agriculture-gallery-14.png": {
+		"title": "14 / Filter experience / Events",
+		"description": "A focused filtering experience that helps users refine event results without adding another layer of complexity to the search journey."
+	},
+	"agriculture-gallery-15.png": {
+		"title": "15 / Content page / Desktop",
+		"description": "A flexible content page that brings together long-form information, supporting components and clear hierarchy within the broader page system."
+	},
+	"agriculture-gallery-16.png": {
+		"title": "16 / Content page / Mobile",
+		"description": "The content experience adapted for smaller screens, maintaining readability and hierarchy across deeper, long-form content."
+	}
+}

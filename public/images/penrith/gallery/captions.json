@@ -1,0 +1,82 @@
+{
+	"penrith-gallery-01.png": {
+		"title": "01 / Discovery workshop",
+		"description": "Mapping the existing experience, content and key requirements to establish a clear foundation for the redesign."
+	},
+	"penrith-gallery-02.png": {
+		"title": "02 / Wireframes",
+		"description": "Exploring page structures, content hierarchy and reusable patterns across key page types."
+	},
+	"penrith-gallery-03.png": {
+		"title": "03 / Visual exploration",
+		"description": "Testing visual directions, layouts and components to translate the new direction into a cohesive digital experience."
+	},
+	"penrith-gallery-04.png": {
+		"title": "04 / Main site — Desktop",
+		"description": "The redesigned main site brings the new visual language and clearer content structure together across the core experience."
+	},
+	"penrith-gallery-05.png": {
+		"title": "05 / Main site — Mobile",
+		"description": "The main site adapts the same visual and content structure into a focused mobile experience."
+	},
+	"penrith-gallery-06.png": {
+		"title": "06 / Mega menu — Desktop",
+		"description": "A structured mega menu helps users navigate a broad range of community content and services more easily."
+	},
+	"penrith-gallery-07.png": {
+		"title": "07 / Resident landing page — Desktop",
+		"description": "A tailored landing page organises resident services and information into clearer, more accessible pathways."
+	},
+	"penrith-gallery-08.png": {
+		"title": "08 / Resident landing page — Mobile",
+		"description": "The resident experience is simplified for smaller screens while maintaining clear pathways to key services."
+	},
+	"penrith-gallery-09.png": {
+		"title": "09 / Events listing — Desktop",
+		"description": "A structured events listing makes it easier to browse and discover upcoming events across Penrith."
+	},
+	"penrith-gallery-10.png": {
+		"title": "10 / Events listing — Mobile",
+		"description": "The events experience is reflowed into a simple, scannable mobile listing."
+	},
+	"penrith-gallery-11.png": {
+		"title": "11 / Content page — Desktop",
+		"description": "A flexible content template creates a clearer hierarchy for long-form information and supporting content."
+	},
+	"penrith-gallery-12.png": {
+		"title": "12 / Content page — Mobile",
+		"description": "The content template adapts to mobile while preserving hierarchy, navigation and supporting components."
+	},
+	"penrith-gallery-13.png": {
+		"title": "13 / Search — Desktop",
+		"description": "A search experience brings results, filters and content types together to help users find information more efficiently."
+	},
+	"penrith-gallery-14.png": {
+		"title": "14 / Search — Mobile",
+		"description": "Search and filtering are streamlined for mobile, making results easier to scan and refine."
+	},
+	"penrith-gallery-15.png": {
+		"title": "15 / Visit Penrith — Desktop",
+		"description": "A more visual experience brings destination content, local guides and experiences together to inspire exploration."
+	},
+	"penrith-gallery-16.png": {
+		"title": "16 / Visit Penrith — Mobile",
+		"description": "The Visit Penrith experience adapts the rich visual content into a more focused mobile journey."
+	},
+	"penrith-gallery-17.png": {
+		"title": "17 / Ripples Leisure Centre — Desktop",
+		"description": "A branded sub-site extends the Penrith design foundation into a distinct experience for Ripples Leisure Centre."
+	},
+	"penrith-gallery-18.png": {
+		"title": "18 / Ripples Leisure Centre — Mobile",
+		"description": "The Ripples experience maintains its distinct identity while applying the shared responsive design foundation."
+	},
+	"penrith-gallery-19.png": {
+		"title": "19 / The Quarter — Desktop",
+		"description": "The Quarter demonstrates how the design foundation can adapt to a separate brand and content ecosystem."
+	},
+	"penrith-gallery-20.png": {
+		"title": "20 / The Quarter — Mobile",
+		"description": "The Quarter experience translates the same flexible foundation into a focused mobile layout."
+	}
+}
