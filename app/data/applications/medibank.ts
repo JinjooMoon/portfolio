@@ -1,0 +1,126 @@
+import type { ApplicationPageData } from "../../components/application-page";
+
+export const medibankApplication: ApplicationPageData = {
+  person: {
+    name: "Jinjoo Moon",
+    descriptor: "Product & UI Designer",
+    links: [
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/jinjoopearlmoon/", external: true },
+      { label: "Portfolio", href: "https://jinjoomoon.com", external: true },
+      { label: "Email", href: "mailto:jinjoo.pearl.moon@gmail.com" },
+      { label: "View online", href: "https://jinjoomoon.com", external: true, printOnly: true },
+      { label: "jinjoomoon.com", href: "https://jinjoomoon.com", external: true, printOnly: true },
+    ],
+  },
+  company: "Medibank",
+  role: "Junior Product Designer",
+  location: "Melbourne, VIC · Australia",
+  introduction:
+    "Product & UI Designer with 9+ years of experience creating digital experiences across government, higher education and complex organisations.",
+  metadata: [
+    { label: "Experience", value: "9+ years" },
+    { label: "Specialisations", value: "Product & UI design · Design systems" },
+  ],
+  sectionLabels: {
+    profile: "PROFILE",
+    experience: "EXPERIENCE",
+    skills: "CAPABILITIES",
+    education: "EDUCATION",
+    coverLetter: "COVER LETTER",
+  },
+  profile: [
+    "Currently a UI Designer at Squiz, working across wireframing, interaction design, high-fidelity UI and prototyping.",
+    "I contribute to design systems, accessibility and design QA, translating complex requirements into clear, scalable experiences with UX designers, developers, clients and stakeholders.",
+    "I’m now looking to further develop my product design practice, particularly across customer-centred discovery, research, usability testing and data-informed design.",
+  ],
+  experience: [
+    {
+      company: "SQUIZ",
+      role: "UI Designer",
+      dates: "Sep 2021 – Present",
+      location: "Melbourne, Victoria, Australia",
+      description: "Design digital experiences for Australian government, higher education and other large organisations, working across complex websites and digital products.",
+      responsibilities: [
+        "Create wireframes, user flows, interaction patterns, prototypes and high-fidelity UI across responsive digital experiences.",
+        "Translate complex business and user requirements into clear and intuitive design solutions.",
+        "Collaborate with UX designers, developers and stakeholders, presenting design concepts and rationale throughout delivery.",
+        "Contribute to design systems across foundations, tokens, variables, components, variants, states and usage guidance.",
+        "Audit components and interfaces, applying responsive and WCAG accessibility principles to create scalable solutions.",
+        "Partner with developers during implementation and provide design QA to ensure the final experience reflects the intended design.",
+      ],
+      projects: [
+        "Parliament of NSW",
+        "Agriculture Victoria",
+        "LGASA",
+        "Service Tasmania",
+        "Commonwealth Ombudsman",
+        "State Records of South Australia",
+        "Office of the Australian Information Commissioner (OAIC)",
+        "Timaru District Council",
+        "Deakin University",
+        "Monash University",
+        "Macquarie University",
+        "Master Builders Queensland",
+        "Office for Early Childhood",
+      ],
+    },
+    {
+      company: "DKBPROJECT",
+      role: "Web Designer",
+      dates: "Feb 2020 – Sep 2021",
+      location: "Sydney, New South Wales, Australia",
+      responsibilities: [
+        "Designed responsive websites and digital experiences from initial planning through to implementation.",
+        "Developed wireframes, page layouts and high-fidelity visual designs based on business and user requirements.",
+        "Worked with developers to translate designs into functional digital experiences.",
+        "Used HTML, CSS, SCSS, JavaScript, PHP and MySQL to understand technical constraints and support implementation.",
+        "Maintained and improved existing digital products while contributing to new website projects.",
+      ],
+    },
+    {
+      company: "ECNESOFT",
+      role: "Web Designer",
+      dates: "Jul 2017 – Jan 2020",
+      location: "Sydney, Australia",
+      responsibilities: [
+        "Designed responsive websites and digital experiences across a range of projects.",
+        "Translated business requirements into page structures, layouts and visual design solutions.",
+        "Worked across planning, design and implementation, collaborating with developers throughout delivery.",
+        "Created designs using Figma and contributed to front-end implementation using HTML and CSS.",
+      ],
+    },
+    {
+      company: "ISI Branding – IDEOGRAPHIC STRATEGIES INC.",
+      role: "Visual Graphic Design Intern",
+      dates: "Nov 2016 – Feb 2017",
+      location: "Vancouver, Canada",
+      responsibilities: [
+        "Created visual communication and branding materials across print and digital projects.",
+        "Developed visual concepts and design assets based on client and business requirements.",
+        "Worked across branding, marketing and visual communication projects.",
+      ],
+    },
+  ],
+  skills: [
+    { title: "PRODUCT DESIGN", skills: ["Interaction Design", "Wireframing", "Prototyping", "User Flows", "Responsive Design", "Design Thinking", "Problem Solving"] },
+    { title: "UI & VISUAL DESIGN", skills: ["Visual Design", "Design Systems", "Components", "Design Tokens", "Typography", "Layout", "Accessibility", "WCAG"] },
+    { title: "COLLABORATION", skills: ["Cross-functional Collaboration", "Stakeholder Communication", "Developer Handover", "Design QA", "Design Critique"] },
+    { title: "TOOLS & TECHNOLOGY", skills: ["Figma", "FigJam", "Miro", "Mural", "HTML", "CSS", "SCSS", "JavaScript"] },
+  ],
+  education: [
+    { institution: "HONGIK UNIVERSITY", qualification: "Bachelor's Degree, Communication Design", dates: "2011 – 2017" },
+    { institution: "THE UNIVERSITY OF KANSAS", qualification: "Exchange Student, Communication Design", dates: "2015" },
+  ],
+  coverLetter: {
+    greeting: "Dear Medibank Experience Design Team,",
+    paragraphs: [
+      "I’m a Product & UI Designer with 9+ years of experience creating digital experiences across government, higher education and complex organisations. I’m drawn to Medibank’s Experience Design team because I want to bring that foundation into a product-focused environment and take broader ownership of customer-centred design.",
+      "At Squiz, I design digital experiences across wireframing, interaction design, prototyping and high-fidelity UI, alongside design systems, accessibility, development handover and design QA. I understand UX flows and have contributed to, and sometimes led, parts of the UX process. My experience has been weighted more toward UI and delivery, so I’ve had fewer opportunities to independently lead product design end to end, from discovery through research, testing and iteration.",
+      "I’m applying at junior level by choice: it reflects the product-design ownership I want to build, not a lack of professional design experience. I’m looking for a team where I can contribute from my UI and interaction foundation while learning from experienced senior product designers, receiving thoughtful guidance and feedback, and being challenged to sharpen my product thinking.",
+      "I’m especially keen to deepen my practice in discovery, research, usability testing and data-informed decision making, and to grow beyond my current UI-focused strengths as part of a dedicated product team.",
+      "My experience working across complex government and education projects has also taught me the importance of accessibility, consistency and scalable design. Through my work on design systems and component audits, I’ve developed a strong appreciation for creating reusable patterns and making thoughtful design decisions that work across different products and contexts.",
+      "I’m particularly drawn to Medibank’s purpose of creating better health and wellbeing for all Australians, and I’d love the opportunity to contribute to meaningful digital experiences while continuing to grow as a product designer.",
+    ],
+    closing: "Kind regards,",
+  },
+};
