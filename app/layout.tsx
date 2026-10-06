@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PortfolioLoadingBoundary } from "./components/portfolio-loading";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: "Jinjoo Moon | Product Designer",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body><PortfolioLoadingBoundary>{children}</PortfolioLoadingBoundary></body>
+      <body>
+        <PortfolioLoadingBoundary>{children}</PortfolioLoadingBoundary>
+        <Analytics />
+      </body>
     </html>
   );
 }
