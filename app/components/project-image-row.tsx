@@ -63,6 +63,7 @@ export function ProjectImageRow({ variation, images, className = "" }: ProjectIm
             width={image.width}
             height={image.height}
             sizes="(max-width: 767px) 100vw, 840px"
+            draggable={false}
           />
           {image.caption ? <figcaption>{image.caption}</figcaption> : null}
         </figure>

@@ -102,10 +102,10 @@ export const medibankApplication: ApplicationPageData = {
     },
   ],
   skills: [
-    { title: "PRODUCT DESIGN", skills: ["Interaction Design", "Wireframing", "Prototyping", "User Flows", "Responsive Design", "Design Thinking", "Problem Solving"] },
-    { title: "UI & VISUAL DESIGN", skills: ["Visual Design", "Design Systems", "Components", "Design Tokens", "Typography", "Layout", "Accessibility", "WCAG"] },
+    { title: "PRODUCT DESIGN", skills: ["Wireframing", "Prototyping", "User Flows", "Responsive Design", "Design Thinking", "Problem Solving"] },
+    { title: "UI & VISUAL DESIGN", skills: ["Visual Design", "Design Systems", "Components", "Design Tokens", "Accessibility", "WCAG"] },
     { title: "COLLABORATION", skills: ["Cross-functional Collaboration", "Stakeholder Communication", "Developer Handover", "Design QA", "Design Critique"] },
-    { title: "TOOLS & TECHNOLOGY", skills: ["Figma", "FigJam", "Miro", "Mural", "HTML", "CSS", "SCSS", "JavaScript"] },
+    { title: "TOOLS & TECHNOLOGY", skills: ["Figma", "FigJam", "Mural", "HTML", "CSS", "SCSS", "JavaScript"] },
   ],
   education: [
     { institution: "HONGIK UNIVERSITY", qualification: "Bachelor's Degree, Communication Design", dates: "2011 – 2017" },

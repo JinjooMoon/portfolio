@@ -1,3 +1,5 @@
+import styles from "./application-page.module.css";
+
 export type ApplicationPageData = {
   person: {
     name: string;
@@ -31,91 +33,124 @@ export type ApplicationPageData = {
   coverLetter: { greeting: string; paragraphs: string[]; closing: string };
 };
 
-function ContactLinks({ data }: { data: ApplicationPageData }) {
+type DocumentKind = "resume" | "cover-letter";
+
+function getLink(data: ApplicationPageData, label: string) {
+  return data.person.links.find((link) => link.label === label);
+}
+
+function ContactDetails({ data }: { data: ApplicationPageData }) {
+  const email = getLink(data, "Email");
+  const portfolio = getLink(data, "Portfolio");
+  const linkedIn = getLink(data, "LinkedIn");
+  const printLinks = data.person.links.filter((link) => link.printOnly);
+  const portfolioLabel = portfolio?.href.replace(/^https?:\/\//, "").replace(/\/$/, "") ?? "jinjoomoon.com";
+
   return (
-    <nav className="application-links" aria-label="Contact links">
-      {data.person.links.map((link) => (
-        <a key={link.label} className={link.printOnly ? "application-link--print-only" : undefined} href={link.href} target={link.external ? "_blank" : undefined} rel={link.external ? "noreferrer" : undefined}>{link.label}</a>
-      ))}
-    </nav>
+    <aside className={styles.contacts} aria-label="Contact details">
+      {email ? (
+        <div className={styles.contactItem}>
+          <span>Email</span>
+          <a href={email.href}>{email.href.replace(/^mailto:/, "")}</a>
+        </div>
+      ) : null}
+      {portfolio ? (
+        <div className={styles.contactItem}>
+          <span>Portfolio</span>
+          <a href={portfolio.href} target="_blank" rel="noreferrer">{portfolioLabel}</a>
+        </div>
+      ) : null}
+      <div className={styles.contactItem}>
+        <span>Based in</span>
+        <span>{data.location.split(",")[0]}</span>
+      </div>
+      {linkedIn ? <a className={styles.linkedin} href={linkedIn.href} target="_blank" rel="noreferrer">LinkedIn</a> : null}
+      {printLinks.length ? (
+        <nav className={styles.printLinks} aria-label="Online portfolio links">
+          {printLinks.map((link) => (
+            <a key={link.label} href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+          ))}
+        </nav>
+      ) : null}
+    </aside>
   );
 }
 
 function ApplicationHeader({ data }: { data: ApplicationPageData }) {
   return (
-    <header className="application-header">
-      <a className="application-identity" href="https://jinjoomoon.com" aria-label={`${data.person.name}, ${data.person.descriptor}`}>
-        <h1>{data.person.name}</h1>
-        <span>{data.person.descriptor}</span>
-      </a>
-      <div className="application-header__aside">
-        <ContactLinks data={data} />
-        <ApplicationIntro data={data} />
+    <header className={styles.header}>
+      <div className={styles.headerLead}>
+        <div className={styles.identity}>
+          <h1>{data.person.name}</h1>
+          <p>{data.person.descriptor}</p>
+        </div>
+        <p className={styles.positioning}>{data.introduction}</p>
       </div>
+      <ContactDetails data={data} />
     </header>
   );
 }
 
-function ApplicationIntro({ data }: { data: ApplicationPageData }) {
+function ApplicationDivider() {
+  return <img className={styles.divider} src="/images/application-divider.svg" alt="" width={960} height={2} />;
+}
+
+function ApplicationNavigation({ current }: { current: DocumentKind }) {
   return (
-    <section className="application-intro" aria-label="Designer positioning">
-      <div className="application-intro__summary">
-        <p className="application-intro__positioning">{data.introduction}</p>
-        <p className="application-location">{data.location}</p>
-        <dl className="application-metadata">
-          {data.metadata.map((item) => (
-            <div key={item.label}>
-              <dt>{item.label}</dt>
-              <dd>{item.value}</dd>
-            </div>
-          ))}
-        </dl>
-      </div>
-    </section>
+    <footer className={styles.footer}>
+      <nav aria-label="Application documents">
+        <a href="/apply/medibank/resume" aria-current={current === "resume" ? "page" : undefined}>Resume</a>
+        <a href="/apply/medibank/cover-letter" aria-current={current === "cover-letter" ? "page" : undefined}>Cover Letter</a>
+      </nav>
+    </footer>
   );
 }
 
-function SectionHeading({ number, id, children }: { number: string; id: string; children: string }) {
+function ApplicationDocument({ data, current, children, bottomDivider = false }: {
+  data: ApplicationPageData;
+  current: DocumentKind;
+  children: React.ReactNode;
+  bottomDivider?: boolean;
+}) {
   return (
-    <h2 className="application-section-label" id={id}>
-      <span className="application-section-number">{number} /</span>
-      <span>{children}</span>
-    </h2>
+    <main className={styles.page}>
+      <article className={styles.document}>
+        <ApplicationHeader data={data} />
+        <ApplicationDivider />
+        {children}
+        {bottomDivider ? <ApplicationDivider /> : null}
+        <ApplicationNavigation current={current} />
+      </article>
+    </main>
   );
 }
 
 function ProfileSection({ data }: { data: ApplicationPageData }) {
   return (
-    <section className="application-section" aria-labelledby="profile-heading">
-      <SectionHeading number="01" id="profile-heading">{data.sectionLabels.profile}</SectionHeading>
-      <div className="application-prose">{data.profile.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+    <section className={styles.profile} aria-labelledby="resume-profile-heading">
+      <h2 className={styles.sectionHeading} id="resume-profile-heading">Profile</h2>
+      <p>{data.profile.join(" ")}</p>
     </section>
   );
 }
 
 function ExperienceSection({ data }: { data: ApplicationPageData }) {
   return (
-    <section className="application-section application-experience-section" aria-labelledby="experience-heading">
-      <SectionHeading number="02" id="experience-heading">{data.sectionLabels.experience}</SectionHeading>
-      <div className="application-experience-list">
-        {data.experience.map((experience) => (
-          <article className="application-experience" key={`${experience.company}-${experience.role}`}>
-            <div className="application-experience__meta">
-              <h3>{experience.company}</h3>
-              <p>{experience.role}</p>
-              <p className="application-muted">{experience.dates}</p>
-              <p className="application-muted">{experience.location}</p>
+    <section className={styles.experience} aria-labelledby="resume-experience-heading">
+      <h2 className={styles.sectionHeading} id="resume-experience-heading">Experience</h2>
+      <div className={styles.experienceList}>
+        {data.experience.map((item) => (
+          <article className={styles.experienceEntry} key={`${item.company}-${item.role}`}>
+            <div className={styles.experienceMeta}>
+              <h3>{item.company}</h3>
+              <p className={styles.role}>{item.role}</p>
+              <p className={styles.date}>{item.dates}</p>
+              <p>{item.location}</p>
             </div>
-            <div className="application-experience__body">
-              {experience.description ? <p>{experience.description}</p> : null}
-              <ul>{experience.responsibilities.map((item) => <li key={item}>{item}</li>)}</ul>
-              {experience.projects ? (
-                <div className="application-projects">
-                  <strong>Selected projects</strong>
-                  <ul>{experience.projects.map((project) => <li key={project}>{project}</li>)}</ul>
-                </div>
-              ) : null}
-            </div>
+            {item.description ? <p className={styles.experienceDescription}>{item.description}</p> : null}
+            <ul className={styles.responsibilities}>
+              {item.responsibilities.map((responsibility) => <li key={responsibility}>{responsibility}</li>)}
+            </ul>
           </article>
         ))}
       </div>
@@ -125,18 +160,15 @@ function ExperienceSection({ data }: { data: ApplicationPageData }) {
 
 function SkillsSection({ data }: { data: ApplicationPageData }) {
   return (
-    <section className="application-section" aria-labelledby="skills-heading">
-      <SectionHeading number="03" id="skills-heading">{data.sectionLabels.skills}</SectionHeading>
-      <div className="application-skills-grid">
-        {data.skills.map((group, index) => {
-          const headingId = `skill-group-${index + 1}`;
-          return (
-            <section className="application-skill-group" key={group.title} aria-labelledby={headingId}>
-              <h3 id={headingId}>{group.title}</h3>
-              <ul>{group.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul>
-            </section>
-          );
-        })}
+    <section className={styles.skills} aria-labelledby="resume-skills-heading">
+      <h2 className={styles.sectionHeading} id="resume-skills-heading">Skills</h2>
+      <div className={styles.skillGroups}>
+        {data.skills.map((group) => (
+          <div className={styles.skillGroup} key={group.title}>
+            <h3>{group.title}</h3>
+            <ul>{group.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -144,14 +176,14 @@ function SkillsSection({ data }: { data: ApplicationPageData }) {
 
 function EducationSection({ data }: { data: ApplicationPageData }) {
   return (
-    <section className="application-section application-section--compact" aria-labelledby="education-heading">
-      <SectionHeading number="04" id="education-heading">{data.sectionLabels.education}</SectionHeading>
-      <div className="application-education-list">
+    <section className={styles.education} aria-labelledby="resume-education-heading">
+      <h2 className={styles.sectionHeading} id="resume-education-heading">Education</h2>
+      <div className={styles.educationList}>
         {data.education.map((item) => (
-          <article key={item.institution}>
+          <article className={styles.educationEntry} key={item.institution}>
             <h3>{item.institution}</h3>
             <p>{item.qualification}</p>
-            <p className="application-muted">{item.dates}</p>
+            <p className={styles.date}>{item.dates}</p>
           </article>
         ))}
       </div>
@@ -159,50 +191,30 @@ function EducationSection({ data }: { data: ApplicationPageData }) {
   );
 }
 
-function CoverLetterSection({ data }: { data: ApplicationPageData }) {
+export function ResumePage({ data }: { data: ApplicationPageData }) {
   return (
-    <section className="application-section application-cover-letter" aria-labelledby="cover-letter-heading">
-      <SectionHeading number="05" id="cover-letter-heading">{data.sectionLabels.coverLetter}</SectionHeading>
-      <div className="application-letter">
-        <p>{data.coverLetter.greeting}</p>
-        {data.coverLetter.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-        <p className="application-signoff">{data.coverLetter.closing}<br /><span>{data.person.name}</span></p>
-      </div>
-    </section>
-  );
-}
-
-function ApplicationFooter({ data }: { data: ApplicationPageData }) {
-  return (
-    <footer className="application-footer">
-      <div className="application-identity">
-        <strong>{data.person.name.toUpperCase()}</strong>
-        <span>{data.person.descriptor}</span>
-      </div>
-      <ContactLinks data={data} />
-    </footer>
-  );
-}
-
-export function ApplicationPage({ data }: { data: ApplicationPageData }) {
-  return (
-    <>
-      <main className="application-page">
-        <div className="application-sheet">
-          <ApplicationHeader data={data} />
-          <ProfileSection data={data} />
-          <ExperienceSection data={data} />
+    <ApplicationDocument data={data} current="resume">
+      <ProfileSection data={data} />
+      <ApplicationDivider />
+      <div className={styles.resumeGrid}>
+        <ExperienceSection data={data} />
+        <aside className={styles.resumeSidebar}>
           <SkillsSection data={data} />
           <EducationSection data={data} />
-          <CoverLetterSection data={data} />
-          <ApplicationFooter data={data} />
-        </div>
-      </main>
-      <main className="application-mobile" aria-labelledby="mobile-notice">
-        <div>
-          <h1 id="mobile-notice">The cover letter and resume are available on desktop or larger screens only.</h1>
-        </div>
-      </main>
-    </>
+        </aside>
+      </div>
+    </ApplicationDocument>
+  );
+}
+
+export function CoverLetterPage({ data }: { data: ApplicationPageData }) {
+  return (
+    <ApplicationDocument data={data} current="cover-letter" bottomDivider>
+      <section className={styles.letter} aria-label="Cover letter">
+        <p>{data.coverLetter.greeting}</p>
+        {data.coverLetter.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        <p className={styles.signoff}>{data.coverLetter.closing}<br /><strong>{data.person.name}</strong></p>
+      </section>
+    </ApplicationDocument>
   );
 }

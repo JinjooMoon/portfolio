@@ -92,8 +92,9 @@ export function ProjectGallery({ items }: { items: ProjectGalleryItem[] }) {
               type="button"
               aria-label={`View ${item.title}`}
               onClick={(event) => openAt(index, event.currentTarget)}
+              onContextMenu={(event) => event.preventDefault()}
             >
-              <Image src={item.src} alt="" width={item.width} height={item.height} sizes="(max-width: 767px) 50vw, 25vw" />
+              <Image src={item.src} alt="" width={item.width} height={item.height} sizes="(max-width: 767px) 50vw, 25vw" draggable={false} />
               <span className="project-gallery__overlay" aria-hidden="true">
                 <span>View image</span>
                 <ExternalLinkArrow />
@@ -142,6 +143,8 @@ export function ProjectGallery({ items }: { items: ProjectGalleryItem[] }) {
                 height={current.height}
                 sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1279px) calc(100vw - 128px), 1240px"
                 priority
+                draggable={false}
+                onContextMenu={(event) => event.preventDefault()}
               />
             </div>
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 import { BackToTop } from "./components/back-to-top";
 import { ExternalLinkIcon } from "./components/external-link-arrow";
 import { SiteHeader } from "./components/site-header";
@@ -129,10 +130,61 @@ function Footer() {
 }
 
 export default function HomePage() {
+  const heroRef = useRef<HTMLElement>(null);
+  const backgroundRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    const background = backgroundRef.current;
+    if (!hero || !background) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let frameId: number | null = null;
+
+    const updateOffset = () => {
+      frameId = null;
+      const { top, height } = hero.getBoundingClientRect();
+      const progress = height > 0 ? Math.min(1, Math.max(0, -top / height)) : 0;
+      background.style.setProperty("--hero-parallax-offset", `${progress * -72}px`);
+      background.style.setProperty("--hero-parallax-scale", `${1.03 + progress * 0.02}`);
+    };
+
+    const scheduleUpdate = () => {
+      if (frameId === null) frameId = window.requestAnimationFrame(updateOffset);
+    };
+
+    const syncMotionPreference = () => {
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
+      frameId = null;
+      background.style.removeProperty("--hero-parallax-offset");
+      background.style.removeProperty("--hero-parallax-scale");
+
+      if (!reducedMotion.matches) {
+        window.addEventListener("scroll", scheduleUpdate, { passive: true });
+        window.addEventListener("resize", scheduleUpdate);
+        scheduleUpdate();
+      }
+    };
+
+    syncMotionPreference();
+    reducedMotion.addEventListener("change", syncMotionPreference);
+
+    return () => {
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      reducedMotion.removeEventListener("change", syncMotionPreference);
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
+      background.style.removeProperty("--hero-parallax-offset");
+      background.style.removeProperty("--hero-parallax-scale");
+    };
+  }, []);
+
   return (
     <main id="top" className="page-shell">
-      <section className="hero-section" aria-labelledby="hero-heading">
-        <div className="hero-background" aria-hidden="true" />
+      <section ref={heroRef} className="hero-section" aria-labelledby="hero-heading">
+        <div ref={backgroundRef} className="hero-background" aria-hidden="true" />
         <SiteHeader />
         <div className="content-container hero-content">
           <div className="hero-copy">

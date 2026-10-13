@@ -7,6 +7,8 @@ import { ExternalLinkArrow, ExternalLinkIcon } from "../external-link-arrow";
 import { ProjectComparison } from "./project-comparison";
 import { InsightCallout } from "./insight-callout";
 import { ProjectGallery } from "./project-gallery";
+import { ProjectImageProtection } from "./project-image-protection";
+import { ProjectScrollReveal } from "./project-scroll-reveal";
 import { ProjectImageRow } from "../project-image-row";
 import { getProjectGallery } from "../../data/projects/get-project-gallery";
 import type { ProjectPageConfig, ProjectSection, ProjectTextBlock } from "./project-page-types";
@@ -312,6 +314,8 @@ export async function ProjectPageTemplate({ project: projectConfig }: { project:
 
   return (
     <main id="project-top" className="project-page">
+      <ProjectImageProtection />
+      <ProjectScrollReveal />
       <SiteHeader sectionIds={projectSectionIds} variant="project" />
       <ProjectHero project={project} />
       <div className="project-container project-toc">
@@ -324,23 +328,25 @@ export async function ProjectPageTemplate({ project: projectConfig }: { project:
           {project.gallery?.length ? <a href="#project-gallery">Project gallery</a> : null}
         </nav>
       </div>
-      {project.sections.map((section) => (
-        <div key={section.id}><SectionDivider /><div className="project-container"><RenderSection section={section} projectSlug={project.slug} /></div></div>
-      ))}
-      {project.outcome ? (
-        <>
-          <SectionDivider />
-          <section id="outcome" className="project-container project-content-section project-outcome-section">
-            <h2>{project.outcome.title}</h2>
-            {project.outcome.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-            {project.outcome.linkUrl ? (
-              <a className="project-outcome__link" href={project.outcome.linkUrl} target="_blank" rel="noreferrer">
-                {project.outcome.linkLabel ?? "Click to view the live site"} <ExternalLinkArrow />
-              </a>
-            ) : null}
-          </section>
-        </>
-      ) : null}
+      <div className="project-main-content">
+        {project.sections.map((section) => (
+          <div key={section.id}><SectionDivider /><div className="project-container"><RenderSection section={section} projectSlug={project.slug} /></div></div>
+        ))}
+        {project.outcome ? (
+          <>
+            <SectionDivider />
+            <section id="outcome" className="project-container project-content-section project-outcome-section">
+              <h2>{project.outcome.title}</h2>
+              {project.outcome.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {project.outcome.linkUrl ? (
+                <a className="project-outcome__link" href={project.outcome.linkUrl} target="_blank" rel="noreferrer">
+                  {project.outcome.linkLabel ?? "Click to view the live site"} <ExternalLinkArrow />
+                </a>
+              ) : null}
+            </section>
+          </>
+        ) : null}
+      </div>
       {project.gallery?.length ? <><SectionDivider /><ProjectGallery items={project.gallery} /></> : null}
       <section className="project-related-section">
         <div className="project-shell">

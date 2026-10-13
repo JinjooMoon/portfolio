@@ -46,9 +46,9 @@ export async function middleware(request: NextRequest) {
   const isUnlockEndpoint = pathname === "/api/auth/unlock";
   const isNextAsset = pathname.startsWith("/_next/");
   const isStaticAsset = pathname.includes(".");
-  const isPublicApplicationPage = pathname.startsWith("/apply/");
+  const isPublicApplicationRoute = pathname === "/apply" || pathname.startsWith("/apply/");
 
-  if (authDisabled || isUnlockEndpoint || isNextAsset || isStaticAsset || isPublicApplicationPage) return NextResponse.next();
+  if (authDisabled || isUnlockEndpoint || isNextAsset || isStaticAsset || isPublicApplicationRoute) return NextResponse.next();
 
   const authenticated = await hasValidSession(request);
   if (isUnlockPage) {
