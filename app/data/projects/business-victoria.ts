@@ -10,9 +10,10 @@ export const businessVictoria: ProjectPageConfig = {
   description: "Refreshing the experience while improving content discovery.",
   contribution: "UX/UI design, visual refresh and responsive design",
   tags: ["Visual refresh", "Solving complex problems"],
-  status: "In development",
+  status: "Live",
   year: "2026",
   heroTone: "#201547",
+  liveUrl: "https://business.vic.gov.au/",
   sections: [
     {
       id: "overview",
@@ -83,6 +84,8 @@ export const businessVictoria: ProjectPageConfig = {
         { heading: "02 / Cohesive Brand Experience", paragraphs: ["Established a modern, highly accessible UI framework deployed across both landing and content templates."] },
         { heading: "03 / Project Status", paragraphs: ["Successfully signed off across government stakeholders; currently in build for a planned early 2027 launch."] },
       ],
+      linkLabel: "Click to view the live site",
+      linkUrl: "https://business.vic.gov.au/",
     },
   ],
   relatedProjects: [

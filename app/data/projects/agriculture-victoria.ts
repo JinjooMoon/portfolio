@@ -13,6 +13,7 @@ export const agricultureVictoria: ProjectPageConfig = {
   status: "In development",
   year: "2025-2026",
   heroTone: "#111314",
+  
   sections: [
     {
       id: "overview",

@@ -55,6 +55,8 @@ export type ProjectSection = {
     layout: DynamicExperienceGroup;
     visualDetails: DynamicExperienceGroup;
   };
+  linkLabel?: string;
+  linkUrl?: string;
 };
 
 export type ProjectPageConfig = {

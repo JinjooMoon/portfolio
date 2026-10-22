@@ -149,6 +149,17 @@ function BusinessVictoriaUxDeepDive({ section }: { section: ProjectSection }) {
     <section id={section.id} className="project-content-section business-ux-deep-dive">
       <h2>{section.title}</h2>
       <RenderTextBlocks blocks={section.content} />
+      {section.linkLabel && section.linkUrl && (
+        <a
+          href={section.linkUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="project-section__link"
+        >
+          {section.linkLabel}
+          <span aria-hidden="true"> ↗</span>
+        </a>
+      )}
       <InsightCallout>How might we help time-poor business owners quickly understand whether an opportunity is relevant and worth their time?</InsightCallout>
     </section>
   );
@@ -165,6 +176,17 @@ function BusinessVictoriaVisualRefresh({ section }: { section: ProjectSection })
     <section id={section.id} className="project-content-section business-visual-refresh">
       <h2>{section.title}</h2>
       <RenderTextBlocks blocks={section.content} />
+      {section.linkLabel && section.linkUrl ? (
+        <a
+          className="project-section__link"
+          href={section.linkUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {section.linkLabel}
+          <ExternalLinkArrow />
+        </a>
+      ) : null}
       <div className="business-focus-group">
         <h3>Key focus areas</h3>
         <div className="business-focus-list">
@@ -279,6 +301,17 @@ function RenderSection({ section, projectSlug }: { section: ProjectSection; proj
       <h2>{section.displayTitle ?? section.title}</h2>
       <RenderTextBlocks blocks={section.intro} />
       <RenderTextBlocks blocks={section.content} />
+      {section.linkLabel && section.linkUrl ? (
+        <a
+          className="project-outcome__link"
+          href={section.linkUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {section.linkLabel}
+          <ExternalLinkArrow />
+        </a>
+      ) : null}
       {section.processGroups?.length ? (
         <div className="project-process-groups">
           {section.processGroups.map((group) => (
