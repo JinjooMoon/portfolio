@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { PortfolioLoadingBoundary } from "./components/portfolio-loading";
 import "./globals.css";
-import { Analytics } from '@vercel/analytics/react';
+// import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: "Jinjoo Moon | Product Designer",
